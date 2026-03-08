@@ -1,0 +1,10 @@
+LICENSE
+pyproject.toml
+src/MCpypack/__init__.py
+src/MCpypack.egg-info/PKG-INFO
+src/MCpypack.egg-info/SOURCES.txt
+src/MCpypack.egg-info/dependency_links.txt
+src/MCpypack.egg-info/top_level.txt
+src/MCpypack/core/__init__.py
+src/MCpypack/core/datapack.py
+src/MCpypack/core/namespace.py
