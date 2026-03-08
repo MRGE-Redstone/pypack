@@ -1,5 +1,5 @@
 dist/
-pypack.egg-info/
+MCpypack.egg-info/
 venv/
 
 __pycache__
