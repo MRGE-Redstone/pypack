@@ -3,15 +3,18 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pypack"
-version = "0.1.0"
+name = "MCpypack"
+version = "0.2.0"
 description = "Python library for easy creation of Minecraft datapacks"
 authors = [
     {name = "Morten Barthel"}
 ]
 readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
 requires-python = ">=3.14"
 dependencies = []
 
 [tool.setuptools.packages.find]
-include = ["pypack", "pypack.*"]
+where = ["src"]
+include = ["MCpypack", "MCpypack.*"]

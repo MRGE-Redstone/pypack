@@ -1,10 +1,12 @@
-# This file contains the Datapack class used
+# This file contains the Datapack class
 
-from pathlib import Path
-from typing import Dict # For export directory
+from pathlib import Path # For export directory
+from typing import Dict, List
 from packaging.version import Version # For checking Minecraft Version
 import shutil
 import json
+
+from .namespace import Namespace
 
 class Datapack:
     """
@@ -41,6 +43,9 @@ class Datapack:
         self.description: str = description
         self.icon_path: Path | None = Path.cwd() / relative_icon_path if relative_icon_path else None
         self.export_dir: Path = Path.cwd() / relative_export_dir
+
+        # Store namespaces added with 'add_namespace'
+        self.namespaces: List[Namespace] = []
 
     def _get_version_value(self) -> int | float:
         """
@@ -82,6 +87,17 @@ class Datapack:
         # Minecraft Version not supported
         raise ValueError(f"Unsupported version of Minecraft: {v}")
 
+    def add_namespaces(self, *namespaces: Namespace) -> None:
+        """
+        Add namespace to datapack.
+
+        Parameters
+        ----------
+        *namespace:
+            Add one or more namespaces to the datapack.
+        """
+        self.namespaces.extend(namespaces)
+
     def export(self) -> None:
         """
         Export the datapack to location specified in 'relative_export_dir'.
@@ -110,10 +126,11 @@ class Datapack:
             json.dump(pack_mcmeta_content, file, indent=4)
 
         # Copy icon into datapack
-        print("lol")
-        print(self.icon_path)
         if self.icon_path and self.icon_path.is_file():
-            print("Test")
             destination: Path = datapack_dir / "pack.png"
             shutil.copy(self.icon_path, destination)
 
+        # Create namespaces
+        if self.namespaces:
+            for namespace in self.namespaces:
+                namespace.export(datapack_dir=datapack_dir)
