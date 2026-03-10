@@ -1,0 +1,48 @@
+from typing import Any, Dict, List
+from .recipe import Recipe
+
+class Crafting_Shaped(Recipe):
+    """
+    Shaped crafting recipe.
+    """
+
+    def __init__(self,
+                 name: str,
+                 pattern: List[str],
+                 key: Dict[str, str],
+                 result_id: str,
+                 result_count: int,
+                 group: str = "",
+                 category: str = "misc",
+                 ) -> None:
+        """
+        Init shaped crafting recipe.
+
+        Parameters
+        ----------
+        name:
+            Name of the recipe.
+        pattern:
+            A list of single-character keys to describe a pattern for shaped
+            crafting. Each row is one string. Spaces can be used to indicate an
+            empty spot.
+        key:
+            All keys used for this shaped crafting recipe.
+        result_id:
+            Result of the crafting.
+        result_count:
+            Amount of result.
+        group:
+            String identifier for grouping recipes.
+        category:
+            Recipe book category.
+        """
+        super().__init__(name)
+
+        self.config: Dict[str, Any] = {"type": "minecraft:crafting_shaped",
+                             "category": category,
+                             "group": group,
+                             "key": key,
+                             "pattern": pattern,
+                             "result": {"count": result_count, "id" : result_id}}
+
