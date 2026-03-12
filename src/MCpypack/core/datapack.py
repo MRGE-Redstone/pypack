@@ -7,6 +7,8 @@ import shutil
 import json
 import zipfile
 
+from MCpypack import recipe
+
 from .namespace import Namespace
 
 class Datapack:
@@ -94,9 +96,19 @@ class Datapack:
 
         Parameters
         ----------
-        *namespace:
+        *namespaces:
             Add one or more namespaces to the datapack.
         """
+        
+        # Ensure namespaces do not have the same name
+        existing_namespaces: List[str] = [namespace.name for namespace in self.namespaces]
+
+        for namespace in namespaces:
+            if namespace.name in existing_namespaces:
+                raise ValueError(f"Namespace with name {namespace.name} already exists in Datapack {self.name}")
+            existing_namespaces.append(namespace.name)
+            self.namespaces.append(namespace)
+
         self.namespaces.extend(namespaces)
 
     def export(self, overwrite: bool = True, zip: bool = False) -> None:
