@@ -1,7 +1,9 @@
 from typing import Any
+
+from .category import Category, CategoryLike
 from .recipe import Recipe
 
-class Crafting_Shapeless(Recipe):
+class CraftingShapeless(Recipe):
     """
     Shapeless crafting recipe.
     """
@@ -12,7 +14,7 @@ class Crafting_Shapeless(Recipe):
                  result_id: str,
                  result_count: int,
                  group: str = "",
-                 category: str = "misc",
+                 category: CategoryLike = Category.MISC,
                  ) -> None:
         """
         Init shapeless crafting recipe.
@@ -31,11 +33,16 @@ class Crafting_Shapeless(Recipe):
             String identifier for grouping recipes.
         category:
             Recipe book category.
+            Default is "misc".
         """
         super().__init__(name)
 
+        # Convert category to Category enum if it is a string
+        # Ensure valid value if string
+        category_final: str = str(Category.from_str(category))
+
         self.config: dict[str, Any] = {"type": "minecraft:crafting_shapeless",
-                             "category" : category,
+                             "category" : category_final,
                              "group" : group,
                              "ingredients" : ingredients,
                              "result" : {"count": result_count, "id" : result_id}}

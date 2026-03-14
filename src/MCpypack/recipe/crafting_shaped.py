@@ -1,4 +1,6 @@
 from typing import Any
+
+from .category import CategoryLike, Category
 from .recipe import Recipe
 
 class Crafting_Shaped(Recipe):
@@ -13,7 +15,7 @@ class Crafting_Shaped(Recipe):
                  result_id: str,
                  result_count: int,
                  group: str = "",
-                 category: str = "misc",
+                 category: CategoryLike = Category.MISC,
                  ) -> None:
         """
         Init shaped crafting recipe.
@@ -37,6 +39,7 @@ class Crafting_Shaped(Recipe):
             String identifier for grouping recipes.
         category:
             Recipe book category.
+            Default is "misc".
         """
         super().__init__(name)
 
@@ -48,9 +51,13 @@ class Crafting_Shaped(Recipe):
         if pattern_keys != used_keys:
             raise ValueError(f"Pattern keys {pattern_keys} and used keys {used_keys} do not match.")
 
+        # Convert category to Category enum if it is a string
+        # Ensure valid value if string
+        category_final: str = str(Category.from_str(category))
+
         # Create the config the way Minecraft expects it
         self.config: dict[str, Any] = {"type": "minecraft:crafting_shaped",
-                             "category": category,
+                             "category": category_final,
                              "group": group,
                              "key": key,
                              "pattern": pattern,
