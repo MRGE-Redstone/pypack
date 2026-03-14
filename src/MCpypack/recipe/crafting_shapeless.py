@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Any
 from .recipe import Recipe
 
 class Crafting_Shapeless(Recipe):
@@ -8,7 +8,7 @@ class Crafting_Shapeless(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredients: List[str],
+                 ingredients: list[str],
                  result_id: str,
                  result_count: int,
                  group: str = "",
@@ -34,7 +34,7 @@ class Crafting_Shapeless(Recipe):
         """
         super().__init__(name)
 
-        self.config: Dict[str, Any] = {"type": "minecraft:crafting_shapeless",
+        self.config: dict[str, Any] = {"type": "minecraft:crafting_shapeless",
                              "category" : category,
                              "group" : group,
                              "ingredients" : ingredients,

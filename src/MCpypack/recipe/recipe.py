@@ -2,7 +2,7 @@
 
 import json
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 class Recipe:
     """
@@ -21,7 +21,7 @@ class Recipe:
 
         self.name: str = name
 
-        self.config: Dict[str, Any] = {}
+        self.config: dict[str, Any] = {}
 
     def export(self, namespace_dir: Path):
         """

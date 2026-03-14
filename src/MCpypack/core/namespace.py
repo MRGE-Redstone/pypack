@@ -1,7 +1,6 @@
 # This file contains the Namespace class
 
 from pathlib import Path
-from typing import List
 
 from MCpypack.recipe.recipe import Recipe
 
@@ -23,7 +22,7 @@ class Namespace:
         """
         self.name: str = name
 
-        self.recipes: List[Recipe] = []
+        self.recipes: list[Recipe] = []
 
     def add_recipes(self, *recipes: Recipe) -> None:
         """
@@ -36,7 +35,7 @@ class Namespace:
         """
 
         # Ensure recipes do not share the same name
-        existing_names: List[str] = [recipe.name for recipe in self.recipes]
+        existing_names: list[str] = [recipe.name for recipe in self.recipes]
 
         for recipe in recipes:
             if recipe.name in existing_names:
