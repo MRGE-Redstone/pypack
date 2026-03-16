@@ -1,8 +1,6 @@
 from typing import Any
 
-from .group import Group
-
-from .category import CategoryLike, Category
+from .utils import Category, CategoryLike, Group, Result
 from .recipe import Recipe
 
 class Crafting_Shaped(Recipe):
@@ -14,8 +12,7 @@ class Crafting_Shaped(Recipe):
                  name: str,
                  pattern: list[str],
                  key: dict[str, str],
-                 result_id: str,
-                 result_count: int,
+                 result: Result,
                  group: Group = "",
                  category: CategoryLike = Category.MISC,
                  ) -> None:
@@ -33,10 +30,8 @@ class Crafting_Shaped(Recipe):
         key:
             All keys used for this shaped crafting recipe. Must contain all keys
             used in pattern.
-        result_id:
-            Result of the crafting.
-        result_count:
-            Amount of result.
+        result:
+            Result of the crafting stored as a Recipe instance.
         group:
             String identifier for grouping recipes.
         category:
@@ -63,5 +58,5 @@ class Crafting_Shaped(Recipe):
                              "group": group,
                              "key": key,
                              "pattern": pattern,
-                             "result": {"count": result_count, "id" : result_id}}
+                             "result": {"count": result.count, "id" : result.item_id}}
 

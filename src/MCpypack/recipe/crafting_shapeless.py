@@ -1,7 +1,6 @@
 from typing import Any
 
-from .category import Category, CategoryLike
-from .group import Group
+from .utils import Category, CategoryLike, Group, Result
 from .recipe import Recipe
 
 class CraftingShapeless(Recipe):
@@ -12,8 +11,7 @@ class CraftingShapeless(Recipe):
     def __init__(self,
                  name: str,
                  ingredients: list[str],
-                 result_id: str,
-                 result_count: int,
+                 result: Result,
                  group: Group = "",
                  category: CategoryLike = Category.MISC,
                  ) -> None:
@@ -26,10 +24,8 @@ class CraftingShapeless(Recipe):
             Name of the recipe.
         ingredients:
             List of ingredients for the recipe.
-        result_id:
-            Result of the crafting.
-        result_count:
-            Amount of result.
+        result:
+            Result of the crafting stored as a Result instance.
         group:
             String identifier for grouping recipes.
         category:
@@ -46,4 +42,4 @@ class CraftingShapeless(Recipe):
                              "category" : category_final,
                              "group" : group,
                              "ingredients" : ingredients,
-                             "result" : {"count": result_count, "id" : result_id}}
+                             "result" : {"count": result.count, "id" : result.item_id}}
