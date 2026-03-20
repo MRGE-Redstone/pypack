@@ -7,7 +7,7 @@ class Result:
     """
 
     item_id: str
-    _count: int
+    _count: int = field(default=1)
     components: None = field(default=None)
 
     @property
@@ -31,3 +31,9 @@ class Result:
         # Ensure components is not used
         if self.components is not None:
             raise NotImplementedError("The 'components' field is not implemented yet.")
+
+    def to_dict(self) -> dict:
+        return {
+            "id": self.item_id,
+            "count": self._count
+        }
