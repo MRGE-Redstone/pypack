@@ -3,7 +3,7 @@ from typing import Any
 from .utils import Category, CategoryLike, Group, Result
 from .recipe import Recipe
 
-class Crafting_Shaped(Recipe):
+class CraftingShaped(Recipe):
     """
     Shaped crafting recipe.
     """
