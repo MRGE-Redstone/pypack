@@ -1,12 +1,14 @@
 from dataclasses import dataclass, field
 
+from MCpypack.item import Item
+
 @dataclass
 class Result:
     """
     Represents the result of a recipe.
     """
 
-    item_id: str
+    item_id: Item
     _count: int = field(default=1)
     components: None = field(default=None)
 
@@ -34,6 +36,6 @@ class Result:
 
     def to_dict(self) -> dict:
         return {
-            "id": self.item_id,
+            "id": self.item_id.value,
             "count": self._count
         }
