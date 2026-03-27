@@ -4,9 +4,7 @@
 from .crafting_shaped import CraftingShaped
 from .crafting_shapeless import CraftingShapeless
 from .campfire_cooking import CampfireCooking
-from .smelting import Smelting
-from .blasting import Blasting
-from .smoking import Smoking
+from .furnace import Smelting, Blasting, Smoking
 from .stonecutting import Stonecutting
 
 __all__: list[str] = [

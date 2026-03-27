@@ -2,6 +2,7 @@
 # Export Category and CategoryLike
 # Export Group
 # Export Result
+# Export Experience
 # Export Time, Milliseconds, Seconds, Minutes, and Hours
 
 __all__: list[str] = []
@@ -14,6 +15,9 @@ __all__ += ["Group"]
 
 from .result import Result
 __all__ += ["Result"]
+
+from .experience import Experience
+__all__ += ["Experience"]
 
 from .times import Time, Milliseconds, Seconds, Minutes, Hours
 __all__ += ["Time", "Milliseconds", "Seconds", "Minutes", "Hours"]
