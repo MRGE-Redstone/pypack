@@ -1,9 +1,10 @@
-# This file contains recipes for furnaces in Minecraft
-# It support all 3 types of furnaces which are
+# This file contains recipes for furnaces in Minecraft.
+# It support all 3 types of furnaces which are:
 # 1) Standard furnace -> Smelting recipes
 # 2) Blast furnace    -> Blasting recipes
 # 3) Smoker           -> Smoking recipes
-# The 3 classes for each type inherit from the Furnace class
+# The 3 classes for each type inherit from the Furnace class.
+# All of them have to implement the TYPE property.
 
 from MCpypack.item import Item
 from .recipe import Recipe
