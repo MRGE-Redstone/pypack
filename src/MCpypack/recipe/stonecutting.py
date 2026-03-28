@@ -8,6 +8,10 @@ class Stonecutting(Recipe):
     Stonecutting recipe.
     """
 
+    @property
+    def TYPE(cls) -> str:
+        return "stonecutting"
+
     def __init__(self,
                  name: str,
                  ingredient: Item,
@@ -27,7 +31,6 @@ class Stonecutting(Recipe):
         """
         super().__init__(name)
 
-        self.config: dict[str, str | dict] = {"type": "minecraft:stonecutting",
-                             "ingredient" : ingredient.value,
-                             "result" : result.to_dict()}
+        self.config["ingredient"] = ingredient.value
+        self.config["result"] = result.to_dict()
 

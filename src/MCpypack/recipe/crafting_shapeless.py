@@ -8,11 +8,15 @@ class CraftingShapeless(Recipe):
     Shapeless crafting recipe.
     """
 
+    @property
+    def TYPE(cls) -> str:
+        return "minecraft:crafting_shapeless"
+
     def __init__(self,
                  name: str,
                  ingredients: list[Item],
                  result: CountedResult,
-                 group: Group = "",
+                 group: Group | None = None,
                  category: CategoryLike = Category.MISC,
                  ) -> None:
         """
@@ -27,6 +31,7 @@ class CraftingShapeless(Recipe):
         result:
             Result of the crafting stored as a Result instance.
         group:
+            Optional.
             String identifier for grouping recipes.
         category:
             Recipe book category.
@@ -40,8 +45,9 @@ class CraftingShapeless(Recipe):
         
         ingredients_final: list[str] = list(map(lambda ingredient: ingredient.value, ingredients))
 
-        self.config: dict[str, int | str | dict | list[str]] = {"type": "minecraft:crafting_shapeless",
-                             "category" : category_final,
-                             "group" : group,
-                             "ingredients" : ingredients_final,
-                             "result" : result.to_dict()}
+        self.config["category"] = category_final
+        self.config["ingredients"] = ingredients_final
+        self.config["result"] = result.to_dict()
+
+        if group:
+            self.config["group"] = group

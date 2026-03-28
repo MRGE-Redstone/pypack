@@ -9,6 +9,10 @@ class CampfireCooking(Recipe):
     Campfire cooking recipe.
     """
 
+    @property
+    def TYPE(cls) -> str:
+        return "minecraft:campfire_cooking"
+
     def __init__(self,
                  name: str,
                  ingredient: Item,
@@ -35,11 +39,8 @@ class CampfireCooking(Recipe):
 
         super().__init__(name)
 
-        self.config: dict[str, int | str | dict | float] = {
-            "type": "minecraft:campfire_cooking",
-            "ingredient": ingredient.value,
-            "result": result.to_dict()
-        }
+        self.config["ingredient"] = ingredient.value
+        self.config["result"] = result.to_dict()
 
         if experience:
             self.config["experience"] = experience

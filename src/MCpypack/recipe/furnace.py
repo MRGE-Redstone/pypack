@@ -63,12 +63,9 @@ class Furnace(Recipe, ABC):
         # Ensure valid value if string
         category_final: str = str(Category.from_str(category))
 
-        self.config: dict[str, str | int | float | dict[str, str]] = {
-            "type": self.TYPE,
-            "category": category_final,
-            "ingredient": ingredient.value,
-            "result": result.to_dict(),
-        }
+        self.config["category"] = category_final
+        self.config["ingredient"] = ingredient.value
+        self.config["result"] = result.to_dict()
 
         if group:
             self.config["group"] = group

@@ -8,12 +8,16 @@ class CraftingShaped(Recipe):
     Shaped crafting recipe.
     """
 
+    @property
+    def TYPE(cls) -> str:
+        return "minecraft:crafting_shaped"
+
     def __init__(self,
                  name: str,
                  pattern: list[str],
                  key: dict[str, Item],
                  result: CountedResult,
-                 group: Group = "",
+                 group: Group | None = None,
                  category: CategoryLike = Category.MISC,
                  ) -> None:
         """
@@ -33,6 +37,7 @@ class CraftingShaped(Recipe):
         result:
             Result of the crafting stored as a Recipe instance.
         group:
+            Optional.
             String identifier for grouping recipes.
         category:
             Recipe book category.
@@ -57,11 +62,11 @@ class CraftingShaped(Recipe):
             k: v.value for k, v in key.items()
         }
 
-        # Create the config the way Minecraft expects it
-        self.config: dict[str, int | str | dict | list[str]] = {"type": "minecraft:crafting_shaped",
-                             "category": category_final,
-                             "group": group,
-                             "key": key_final,
-                             "pattern": pattern,
-                             "result": result.to_dict()}
+        self.config["category"] = category_final
+        self.config["key"] = key_final
+        self.config["pattern"] = pattern
+        self.config["result"] = result.to_dict()
+
+        if group:
+            self.config["group"] = "group"
 
