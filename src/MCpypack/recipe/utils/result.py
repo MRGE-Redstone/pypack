@@ -25,7 +25,7 @@ class SimpleResult:
             "id": self.item_id.value,
         }
 
-# CountedResult is not a dataclasse.
+# CountedResult is not a dataclass.
 # This is due to the need of validation for the count property.
 # With a dataclass, the user would have to type:
 #   CountedResult(item_id=item, _count=count)
