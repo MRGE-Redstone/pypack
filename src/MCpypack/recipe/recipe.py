@@ -1,13 +1,22 @@
 # This file contains the Recipe class used to create new recipes
 
+from abc import ABC, abstractmethod
 import json
 from pathlib import Path
 from typing import Any
 
-class Recipe:
+class Recipe(ABC):
     """
     Recipe class for adding recipes.
     """
+
+    @property
+    @abstractmethod
+    def TYPE(cls) -> str:
+        """
+        Return the type of the furnace recipe.
+        """
+        pass
 
     def __init__(self, name: str) -> None:
         """
@@ -22,6 +31,8 @@ class Recipe:
         self.name: str = name
 
         self.config: dict[str, Any] = {}
+
+        self.config["type"] = self.TYPE
 
     def export(self, namespace_dir: Path):
         """

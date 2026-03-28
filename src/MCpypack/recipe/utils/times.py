@@ -71,9 +71,14 @@ class Time:
         Return time as Minecraft ticks.
         """
 
-        return Ticks(
+        total_ticks: Ticks =  Ticks(
             int(self.milliseconds.value /1000 *20)
             + (self.seconds.value *20)
             + (self.minutes.value *60 *20)
             + (self.hours.value *3600 *20)
         )
+
+        if total_ticks.value < 1:
+            raise ValueError("Total ticks must be at least 1.")
+
+        return total_ticks
