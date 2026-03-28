@@ -28,8 +28,8 @@ class Furnace(Recipe, ABC):
     def __init__(self,
                 name: str,
                 ingredient: Item,
-                cookingtime: Time,
                 result: SimpleResult,
+                cookingtime: Time | None = None,
                 group: Group | None = None,
                 category: CategoryLike = Category.MISC,
                 experience: Experience | None = None,
@@ -44,10 +44,11 @@ class Furnace(Recipe, ABC):
             Name of the smelting recipe.
         ingredient:
             Ingredient of the recipe.
-        cookingtime:
-            Cookingtime in real-life time values.
         result:
             Result of the smelting.
+        cookingtime:
+            Optional.
+            Cookingtime in real-life time values.
         category:
             Recipe book category of the recipe.
         group:
@@ -65,7 +66,6 @@ class Furnace(Recipe, ABC):
         self.config: dict[str, str | int | float | dict[str, str]] = {
             "type": self.TYPE,
             "category": category_final,
-            "cookingtime": cookingtime.ticks.value,
             "ingredient": ingredient.value,
             "result": result.to_dict(),
         }
@@ -75,6 +75,9 @@ class Furnace(Recipe, ABC):
 
         if experience:
             self.config["experience"] = experience
+
+        if cookingtime:
+            self.config["cookingtime"] = cookingtime.ticks.value
 
 class Smelting(Furnace):
     """

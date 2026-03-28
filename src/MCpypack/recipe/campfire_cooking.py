@@ -12,8 +12,8 @@ class CampfireCooking(Recipe):
     def __init__(self,
                  name: str,
                  ingredient: Item,
-                 cookingtime: Time,
                  result: SimpleResult,
+                 cookingtime: Time | None = None,
                  experience: Experience | None = None,
                  ) -> None:
         """
@@ -25,10 +25,10 @@ class CampfireCooking(Recipe):
             Name of the recipe.
         ingredient:
             Ingredient of the recipe.
-        cookingtime:
-            Cookingtime in real-life time values.
         result:
             Result of the cooking.
+        cookingtime:
+            Optional. Cookingtime in real-life time values.
         experience:
             Optional. The output experience of the recipe.
         """
@@ -37,10 +37,12 @@ class CampfireCooking(Recipe):
 
         self.config: dict[str, int | str | dict | float] = {
             "type": "minecraft:campfire_cooking",
-            "cookingtime": cookingtime.ticks.value,
             "ingredient": ingredient.value,
             "result": result.to_dict()
         }
 
         if experience:
             self.config["experience"] = experience
+
+        if cookingtime:
+            self.config["cookingtime"] = cookingtime.ticks.value
