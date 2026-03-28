@@ -15,7 +15,7 @@ class CampfireCooking(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredient: Item,
+                 ingredient: Item | list[Item],
                  result: SimpleResult,
                  cookingtime: Time | None = None,
                  experience: Experience | None = None,
@@ -39,7 +39,11 @@ class CampfireCooking(Recipe):
 
         super().__init__(name)
 
-        self.config["ingredient"] = ingredient.value
+        if isinstance(ingredient, list):
+            self.config["ingredient"] = [i.value for i in ingredient]
+        else:
+            self.config["ingredient"] = ingredient.value
+
         self.config["result"] = result.to_dict()
 
         if experience:

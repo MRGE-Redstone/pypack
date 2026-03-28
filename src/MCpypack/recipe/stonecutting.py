@@ -14,7 +14,7 @@ class Stonecutting(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredient: Item,
+                 ingredient: Item | list[Item],
                  result: CountedResult,
                  ) -> None:
         """
@@ -31,6 +31,10 @@ class Stonecutting(Recipe):
         """
         super().__init__(name)
 
-        self.config["ingredient"] = ingredient.value
+        if isinstance(ingredient, list):
+            self.config["ingredient"] = [i.value for i in ingredient]
+        else:
+            self.config["ingredient"] = ingredient.value
+
         self.config["result"] = result.to_dict()
 

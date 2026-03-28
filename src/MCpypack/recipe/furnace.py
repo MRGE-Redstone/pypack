@@ -27,7 +27,7 @@ class Furnace(Recipe, ABC):
 
     def __init__(self,
                 name: str,
-                ingredient: Item,
+                ingredient: Item | list[Item],
                 result: SimpleResult,
                 cookingtime: Time | None = None,
                 group: Group | None = None,
@@ -64,7 +64,12 @@ class Furnace(Recipe, ABC):
         category_final: str = str(Category.from_str(category))
 
         self.config["category"] = category_final
-        self.config["ingredient"] = ingredient.value
+
+        if isinstance(ingredient, list):
+            self.config["ingredient"] = [i.value for i in ingredient]
+        else:
+            self.config["ingredient"] = ingredient.value
+
         self.config["result"] = result.to_dict()
 
         if group:

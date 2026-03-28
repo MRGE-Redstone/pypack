@@ -14,7 +14,7 @@ class CraftingShapeless(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredients: list[Item],
+                 ingredients: list[Item] | list[list[Item]] | Item | list[list[Item] | Item],
                  result: CountedResult,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,
@@ -43,7 +43,35 @@ class CraftingShapeless(Recipe):
         # Ensure valid value if string
         category_final: str = str(Category.from_str(category))
         
-        ingredients_final: list[str] = list(map(lambda ingredient: ingredient.value, ingredients))
+
+        # Convert ingredients into useful list
+        ingredients_final: list[str] | list[list[str]] | list[list[str] | str]
+
+        if isinstance(ingredients, Item):
+            # Plain item and not a list of ingredients
+            # -> Just convert it into a list with just the one value
+            ingredients_final = [ingredients.value]
+
+        elif isinstance(ingredients, list):
+            # Ingredients is not just one value but rather a list
+            # The list may contains just items or lists of items
+
+            ingredients_final = []
+
+            for ingredient in ingredients:
+                if isinstance(ingredient, Item):
+                    # If it is just an item append it to the list
+                    ingredients_final.append(ingredient.value)
+
+                elif isinstance(ingredient, list):
+                    # If it is another list of type list[Item]
+                    # -> Put each element into a list and then append it to the
+                    #    final list
+                    inner: list[str] = []
+                    for sub in ingredient:
+                        if isinstance(sub, Item):
+                            inner.append(sub.value)
+                    ingredients_final.append(inner)
 
         self.config["category"] = category_final
         self.config["ingredients"] = ingredients_final
