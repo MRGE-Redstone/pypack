@@ -9,7 +9,7 @@ class Stonecutting(Recipe):
     """
 
     @property
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         return "stonecutting"
 
     def __init__(self,

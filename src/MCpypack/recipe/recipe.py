@@ -14,7 +14,7 @@ class Recipe(ABC):
 
     @property
     @abstractmethod
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         """
         Return the type of the furnace recipe.
         """

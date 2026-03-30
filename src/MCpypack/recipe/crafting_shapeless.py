@@ -9,7 +9,7 @@ class CraftingShapeless(Recipe):
     """
 
     @property
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         return "minecraft:crafting_shapeless"
 
     def __init__(self,

@@ -10,7 +10,7 @@ class CampfireCooking(Recipe):
     """
 
     @property
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         return "minecraft:campfire_cooking"
 
     def __init__(self,

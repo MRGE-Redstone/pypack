@@ -19,7 +19,7 @@ class Furnace(Recipe, ABC):
 
     @property
     @abstractmethod
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         """
         Return the type of the furnace recipe.
         """
@@ -87,7 +87,7 @@ class Smelting(Furnace):
     """
 
     @property
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         return "minecraft:smelting"
 
 class Blasting(Furnace):
@@ -96,7 +96,7 @@ class Blasting(Furnace):
     """
 
     @property
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         return "minecraft:blasting"
 
 class Smoking(Furnace):
@@ -105,5 +105,5 @@ class Smoking(Furnace):
     """
 
     @property
-    def TYPE(cls) -> str:
+    def TYPE(self) -> str:
         return "minecraft:smoking"
