@@ -1,8 +1,8 @@
 # __init__.py file of 'recipe' directory
-# Export CraftingShaped, CraftingShapeless, CampfireCooking
 
 from .crafting_shaped import CraftingShaped
 from .crafting_shapeless import CraftingShapeless
+from .crafting_transmute import CratfingTransmute
 from .campfire_cooking import CampfireCooking
 from .furnace import Smelting, Blasting, Smoking
 from .stonecutting import Stonecutting
@@ -10,6 +10,7 @@ from .stonecutting import Stonecutting
 __all__: list[str] = [
     "CraftingShaped",
     "CraftingShapeless",
+    "CratfingTransmute",
     "CampfireCooking",
     "Smelting",
     "Blasting",
