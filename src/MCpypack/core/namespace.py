@@ -1,17 +1,14 @@
 # This file contains the Namespace class
 
 from pathlib import Path
-from re import compile
 
+from MCpypack.core import NAMESPACE_PATTERN
 from MCpypack.recipe.recipe import Recipe
 
 class Namespace:
     """
     Represents a namespace.
     """
-
-    # Valid namespace regex
-    _NAMESPACE_PATTERN = compile(r"^[a-z_][a-z0-9_-]*$")
 
     def __init__(self,
                  name: str,
@@ -25,7 +22,8 @@ class Namespace:
             Name of the namespace.
         """
 
-        if not self._NAMESPACE_PATTERN.match(name):
+        # Validate name
+        if not NAMESPACE_PATTERN.match(name):
             raise ValueError(f"Invalid namespace name: '{name}'")
 
         self.name: str = name

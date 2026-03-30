@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from MCpypack.core.valid import RECIPE_PATTERN
+
 class Recipe(ABC):
     """
     Recipe class for adding recipes.
@@ -27,6 +29,10 @@ class Recipe(ABC):
         name:
             Name of recipe.
         """
+
+        # Validate name
+        if not RECIPE_PATTERN.match(name):
+            raise ValueError(f"Invalid recipe name: '{name}'")
 
         self.name: str = name
 
