@@ -1,6 +1,4 @@
 from pathlib import Path
-from enum import Enum
-
 
 def generate_enum(input_file: str, output_file: str) -> None:
     input_path: Path = Path(input_file)
@@ -20,4 +18,4 @@ def generate_enum(input_file: str, output_file: str) -> None:
 
 
 if __name__ == "__main__":
-    generate_enum("list/1.21.11.txt", "final/f_1_21_11.py")
+    generate_enum("list/items.txt", "final/items.py")

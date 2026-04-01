@@ -6,6 +6,7 @@ from .crafting_transmute import CratfingTransmute
 from .campfire_cooking import CampfireCooking
 from .furnace import Smelting, Blasting, Smoking
 from .stonecutting import Stonecutting
+from .smithing import SmithingTransform
 
 __all__: list[str] = [
     "CraftingShaped",
@@ -16,6 +17,7 @@ __all__: list[str] = [
     "Blasting",
     "Smoking",
     "Stonecutting",
+    "SmithingTransform",
 ]
 
 from .utils import Milliseconds, Seconds, Minutes, Hours, Time

@@ -1,4 +1,4 @@
-from MCpypack.item import Item
+from MCpypack.item import ItemLike
 from .utils import Category, CategoryLike, Group, CountedResult
 from .recipe import Recipe
 
@@ -14,7 +14,7 @@ class CraftingShaped(Recipe):
     def __init__(self,
                  name: str,
                  pattern: list[str],
-                 key: dict[str, Item] | dict[str, list[Item]] | dict[str, list[Item] | Item],
+                 key: dict[str, ItemLike],
                  result: CountedResult,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,

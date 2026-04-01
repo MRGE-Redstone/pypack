@@ -1,4 +1,4 @@
-from MCpypack.item import Item
+from MCpypack.item import ItemLike
 
 from .utils import CountedResult
 from .recipe import Recipe
@@ -14,7 +14,7 @@ class Stonecutting(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredient: Item | list[Item],
+                 ingredient: ItemLike,
                  result: CountedResult,
                  ) -> None:
         """

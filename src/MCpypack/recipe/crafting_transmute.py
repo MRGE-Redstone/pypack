@@ -1,6 +1,6 @@
 # This file contains the CratfingTransmute class
 
-from MCpypack.item import Item
+from MCpypack.item import ItemLike
 from MCpypack.recipe.utils.result import SimpleResult
 from .utils import Category, CategoryLike, Group
 from .recipe import Recipe
@@ -20,8 +20,8 @@ class CratfingTransmute(Recipe):
 
     def __init__(self,
                  name: str,
-                 input: Item | list[Item],
-                 material: Item | list[Item],
+                 input: ItemLike,
+                 material: ItemLike,
                  result: SimpleResult,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,

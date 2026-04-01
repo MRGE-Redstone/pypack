@@ -1,6 +1,6 @@
 # This file contains the CampfireCooking class
 
-from MCpypack.item import Item
+from MCpypack.item import ItemLike
 from .utils import SimpleResult, Time, Experience
 from .recipe import Recipe
 
@@ -15,7 +15,7 @@ class CampfireCooking(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredient: Item | list[Item],
+                 ingredient: ItemLike,
                  result: SimpleResult,
                  cookingtime: Time | None = None,
                  experience: Experience | None = None,
