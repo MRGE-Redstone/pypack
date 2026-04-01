@@ -6,7 +6,7 @@
 # The 3 classes for each type inherit from the Furnace class.
 # All of them have to implement the TYPE property.
 
-from MCpypack.item import Item
+from MCpypack.item import ItemLike
 from .recipe import Recipe
 from .utils import Time, SimpleResult, Group, CategoryLike, Category, Experience
 
@@ -27,7 +27,7 @@ class Furnace(Recipe, ABC):
 
     def __init__(self,
                 name: str,
-                ingredient: Item | list[Item],
+                ingredient: ItemLike,
                 result: SimpleResult,
                 cookingtime: Time | None = None,
                 group: Group | None = None,

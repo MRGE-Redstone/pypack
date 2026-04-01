@@ -2,7 +2,7 @@
 # 1) Smithing Transform
 
 from .recipe import Recipe
-from MCpypack.item import Item
+from MCpypack.item import ItemLike
 from .utils import SimpleResult
 
 class SmithingTransform(Recipe):
@@ -16,10 +16,10 @@ class SmithingTransform(Recipe):
 
     def __init__(self,
                  name: str,
-                 base: Item | list[Item],
+                 base: ItemLike,
                  result: SimpleResult,
-                 addition: Item | list[Item] | None = None,
-                 template: Item | list[Item] | None = None,
+                 addition: ItemLike | None = None,
+                 template: ItemLike | None = None,
                  ) -> None:
         """
         Init smithing transform recipe.

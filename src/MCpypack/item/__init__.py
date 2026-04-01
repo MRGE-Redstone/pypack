@@ -1,7 +1,10 @@
-# Export 1.21.11 Item enum
+# Export Item enum
+# Export Tags enum
 
-from .final import Item
+from .final import Item, Tag, ItemLike
 
 __all__: list[str] = [
-    "Item"
+    "Item",
+    "Tag",
+    "ItemLike"
 ]

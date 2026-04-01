@@ -42,8 +42,10 @@ __all__ += [
     "Category"
 ]
 
-# Items
-from .item import Item
+# Items and Tags
+from .item import Item, Tag, ItemLike
 __all__ += [
-    "Item"
+    "Item",
+    "Tag",
+    "ItemLike"
 ]

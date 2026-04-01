@@ -1,4 +1,4 @@
-from MCpypack.item import Item
+from MCpypack.item import ItemLike, Item, Tag
 
 from .utils import Category, CategoryLike, Group, CountedResult
 from .recipe import Recipe
@@ -14,7 +14,7 @@ class CraftingShapeless(Recipe):
 
     def __init__(self,
                  name: str,
-                 ingredients: list[Item] | list[list[Item]] | Item | list[list[Item] | Item],
+                 ingredients: ItemLike | list[ItemLike],
                  result: CountedResult,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,
@@ -47,7 +47,7 @@ class CraftingShapeless(Recipe):
         # Convert ingredients into useful list
         ingredients_final: list[str] | list[list[str]] | list[list[str] | str]
 
-        if isinstance(ingredients, Item):
+        if isinstance(ingredients, Item | Tag.ITEM):
             # Plain item and not a list of ingredients
             # -> Just convert it into a list with just the one value
             ingredients_final = [ingredients.value]
@@ -59,7 +59,7 @@ class CraftingShapeless(Recipe):
             ingredients_final = []
 
             for ingredient in ingredients:
-                if isinstance(ingredient, Item):
+                if isinstance(ingredient, Item | Tag.ITEM):
                     # If it is just an item append it to the list
                     ingredients_final.append(ingredient.value)
 
@@ -69,7 +69,7 @@ class CraftingShapeless(Recipe):
                     #    final list
                     inner: list[str] = []
                     for sub in ingredient:
-                        if isinstance(sub, Item):
+                        if isinstance(sub, Item | Tag.ITEM):
                             inner.append(sub.value)
                     ingredients_final.append(inner)
 
