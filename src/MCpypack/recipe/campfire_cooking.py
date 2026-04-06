@@ -1,7 +1,9 @@
 # This file contains the CampfireCooking class
 
+from packaging.version import Version
+
 from MCpypack.item import ItemLike
-from .utils import SimpleResult, Time, Experience
+from .utils import SimpleResult, Time, Experience, CountedResult
 from .recipe import Recipe
 
 class CampfireCooking(Recipe):
@@ -13,10 +15,23 @@ class CampfireCooking(Recipe):
     def TYPE(self) -> str:
         return "minecraft:campfire_cooking"
 
+    def check_version(self, version: Version) -> bool:
+        # This just returns True.
+        # Later in development, when working for version-heavy checking this
+        # will be implemented correctly.
+        # Because in 26.1 Minecraft added the count field to CampfireCooking
+        # recipes we must check whether they are allowed to be used.
+
+        if version < Version("26.1"):
+            if self.result_type != SimpleResult:
+                raise ValueError("In versions prior to 26.1 this recipe did not support CountedResult")
+
+        return True
+
     def __init__(self,
                  name: str,
                  ingredient: ItemLike,
-                 result: SimpleResult,
+                 result: SimpleResult | CountedResult,
                  cookingtime: Time | None = None,
                  experience: Experience | None = None,
                  ) -> None:
@@ -36,6 +51,8 @@ class CampfireCooking(Recipe):
         experience:
             Optional. The output experience of the recipe.
         """
+
+        self.result_type: type[SimpleResult] | type[CountedResult] = type(result)
 
         super().__init__(name)
 

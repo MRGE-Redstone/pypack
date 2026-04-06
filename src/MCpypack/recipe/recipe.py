@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from packaging.version import Version
+
 from MCpypack.core.valid import RECIPE_PATTERN
 
 class Recipe(ABC):
@@ -19,6 +21,12 @@ class Recipe(ABC):
         Return the type of the furnace recipe.
         """
         pass
+
+    @abstractmethod
+    def check_version(self, version: Version) -> bool:
+        """
+        Return if recipe type exists for specified version.
+        """
 
     def __init__(self, name: str) -> None:
         """
@@ -40,7 +48,7 @@ class Recipe(ABC):
 
         self.config["type"] = self.TYPE
 
-    def export(self, namespace_dir: Path):
+    def export(self, namespace_dir: Path, version: Version) -> None:
         """
         Create recipe file inside namespace.
 
@@ -49,6 +57,9 @@ class Recipe(ABC):
         namespace_dir:
             Directory of the namespace.
         """
+
+        if not self.check_version(version):
+            return
 
         # Recipe directory inside namespace
         recipe_dir: Path = namespace_dir / "recipe"

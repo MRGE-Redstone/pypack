@@ -1,3 +1,5 @@
+from packaging.version import Version
+
 from MCpypack.item import ItemLike
 from .utils import Category, CategoryLike, Group, CountedResult
 from .recipe import Recipe
@@ -10,6 +12,13 @@ class CraftingShaped(Recipe):
     @property
     def TYPE(self) -> str:
         return "minecraft:crafting_shaped"
+
+    def check_version(self, version: Version) -> bool:
+        # This just returns True.
+        # Later in development, when working for version-heavy checking this
+        # will be implemented correctly.
+
+        return True
 
     def __init__(self,
                  name: str,

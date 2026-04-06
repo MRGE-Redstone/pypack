@@ -1,5 +1,7 @@
 # This file contains the CratfingTransmute class
 
+from packaging.version import Version
+
 from MCpypack.item import ItemLike
 from MCpypack.recipe.utils.result import SimpleResult
 from .utils import Category, CategoryLike, Group
@@ -17,6 +19,13 @@ class CratfingTransmute(Recipe):
     @property
     def TYPE(self) -> str:
         return "crafting_transmute"
+
+    def check_version(self, version: Version) -> bool:
+        # This just returns True.
+        # Later in development, when working for version-heavy checking this
+        # will be implemented correctly.
+
+        return True
 
     def __init__(self,
                  name: str,

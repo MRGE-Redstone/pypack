@@ -87,5 +87,8 @@ pack.add_namespaces(ns1)
 pack.export(overwrite=True)
 ```
 
+## Website
+- See documentation about MCpypack under our [Website](https://mcpypack.kenolej.de)
+
 ## License
 - This project is licensed under the [GNU General Public License v3.0](LICENSE) (GPL-3.0).

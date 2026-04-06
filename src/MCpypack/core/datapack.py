@@ -78,6 +78,7 @@ class Datapack:
             ("1.21.7", "1.21.8", 81),
             ("1.21.9", "1.21.10", 88.0),
             ("1.21.11", "1.21.11", 94.1),
+            ("26.1", "26.1", 101.1),
         ]
 
         for min_v, max_v, pack_format in _VERSION_MAP:
@@ -145,8 +146,7 @@ class Datapack:
         pack_mcmeta_content: dict[str, dict[str, str | int | float]] = {
             "pack": {
                 "description": self.description,
-                "min_format": self.version_value,
-                "max_format": self.version_value
+                "pack_format": self.version_value,
             }
         }
 
@@ -162,7 +162,7 @@ class Datapack:
         # Create namespaces
         if self.namespaces:
             for namespace in self.namespaces:
-                namespace.export(datapack_dir=datapack_dir)
+                namespace.export(datapack_dir=datapack_dir, version=self.version)
 
         # Create zip if 'zip' is set to 'True'
         if zip:

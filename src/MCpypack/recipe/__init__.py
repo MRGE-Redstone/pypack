@@ -3,21 +3,26 @@
 from .crafting_shaped import CraftingShaped
 from .crafting_shapeless import CraftingShapeless
 from .crafting_transmute import CratfingTransmute
+from .crafting_decorated_pot import CraftingDecoratedPot
 from .campfire_cooking import CampfireCooking
 from .furnace import Smelting, Blasting, Smoking
 from .stonecutting import Stonecutting
-from .smithing import SmithingTransform
+from .smithing import SmithingTransform, SmithingTrim
+from .crafting_special import CraftingSpecialShieldDecoration
 
 __all__: list[str] = [
     "CraftingShaped",
     "CraftingShapeless",
     "CratfingTransmute",
+    "CraftingDecoratedPot",
     "CampfireCooking",
     "Smelting",
     "Blasting",
     "Smoking",
     "Stonecutting",
     "SmithingTransform",
+    "SmithingTrim",
+    "CraftingSpecialShieldDecoration",
 ]
 
 from .utils import Milliseconds, Seconds, Minutes, Hours, Time
