@@ -55,8 +55,9 @@ __all__ += [
 ]
 
 # Components
-from .item import ItemComponents, Glider
+from .item import ItemComponents, Glider, Unbreakable
 __all__ += [
     "ItemComponents",
     "Glider",
+    "Unbreakable",
 ]
