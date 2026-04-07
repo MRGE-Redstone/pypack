@@ -55,7 +55,7 @@ __all__ += [
 ]
 
 # Components
-from .item import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food
+from .item import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food, OminousBottleAmplifier
 __all__ += [
     "ItemComponents",
     "Glider",
@@ -72,4 +72,5 @@ __all__ += [
     "MaxStackSize",
     "MinumumAttackCharge",
     "Food",
+    "OminousBottleAmplifier",
 ]
