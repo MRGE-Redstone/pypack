@@ -6,7 +6,7 @@
 
 from dataclasses import dataclass
 
-from MCpypack.item import Item
+from MCpypack.item import Item, ItemComponents
 
 @dataclass
 class SimpleResult:
@@ -15,15 +15,21 @@ class SimpleResult:
     """
 
     item_id: Item
+    components: ItemComponents | None = None
 
-    def to_dict(self) -> dict[str, str]:
+    def to_dict(self) -> dict:
         """
         Return the result as a dict.
         """
 
-        return {
+        result: dict = {
             "id": self.item_id.value,
         }
+
+        if self.components is not None:
+            result["components"] = self.components.config
+
+        return result
 
 # CountedResult is not a dataclass.
 # This is due to the need of validation for the count property.
@@ -39,6 +45,7 @@ class CountedResult:
     def __init__(self,
                  item_id: Item,
                  count: int = 1,
+                 components: ItemComponents | None = None,
                  ) -> None:
         """
         Init a new recipe with a count.
@@ -49,10 +56,14 @@ class CountedResult:
             Id of the item.
         count:
             Amount of the item.
+        components:
+            Additional components the item should get.
         """
 
         self.item_id: Item = item_id
         self.count = count
+        if components is not None:
+            self.components: ItemComponents = components
 
     @property
     def count(self) -> int:
@@ -60,20 +71,23 @@ class CountedResult:
 
     @count.setter
     def count(self, value: int) -> None:
-        if not 1 <= value <= 64:
-            raise ValueError(f"count must be between 1 and 64, got {value}")
+        if not 1 <= value <= 99:
+            raise ValueError(f"count must be between 1 and 99, got {value}")
         self._count = value
 
-    def to_dict(self) -> dict[str, str | int]:
+    def to_dict(self) -> dict:
         """
         Return the result as a dict.
         """
 
-        result: dict[str, str | int] = {}
+        result: dict = {}
 
         result["id"] = self.item_id.value
 
         if self.count != 1:
             result["count"] = self.count
+
+        if self.components:
+            result["components"] = self.components.config
 
         return result

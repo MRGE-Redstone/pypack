@@ -53,3 +53,25 @@ __all__ += [
     "ItemLike",
     "TrimPattern",
 ]
+
+# Components
+from .item import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food, OminousBottleAmplifier, UseRemainder
+__all__ += [
+    "ItemComponents",
+    "Glider",
+    "Unbreakable",
+    "Consumable",
+    "EnchantmentGlintOverride",
+    "Repairable",
+    "RepairCost",
+    "AttackRange",
+    "IntangibleProjectile",
+    "Damage",
+    "Weapon",
+    "MaxDamage",
+    "MaxStackSize",
+    "MinumumAttackCharge",
+    "Food",
+    "OminousBottleAmplifier",
+    "UseRemainder",
+]

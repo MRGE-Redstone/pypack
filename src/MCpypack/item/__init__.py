@@ -10,3 +10,28 @@ __all__: list[str] = [
     "ItemLike",
     "TrimPattern",
 ]
+
+
+# Export components
+
+from .components import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food, OminousBottleAmplifier, UseRemainder
+
+__all__ += [
+    "ItemComponents",
+    "Glider",
+    "Unbreakable",
+    "Consumable",
+    "EnchantmentGlintOverride",
+    "Repairable",
+    "RepairCost",
+    "AttackRange",
+    "IntangibleProjectile",
+    "Damage",
+    "Weapon",
+    "MaxDamage",
+    "MaxStackSize",
+    "MinumumAttackCharge",
+    "Food",
+    "OminousBottleAmplifier",
+    "UseRemainder",
+]
