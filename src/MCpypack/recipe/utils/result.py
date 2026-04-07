@@ -17,12 +17,12 @@ class SimpleResult:
     item_id: Item
     components: ItemComponents | None = None
 
-    def to_dict(self) -> dict[str, str | dict[str, dict[str, str]] | bool]:
+    def to_dict(self) -> dict:
         """
         Return the result as a dict.
         """
 
-        result: dict[str, str | dict[str, dict[str, str]] | bool] = {
+        result: dict = {
             "id": self.item_id.value,
         }
 
@@ -75,12 +75,12 @@ class CountedResult:
             raise ValueError(f"count must be between 1 and 64, got {value}")
         self._count = value
 
-    def to_dict(self) -> dict[str, str | int | dict[str, dict[str, str]]]:
+    def to_dict(self) -> dict:
         """
         Return the result as a dict.
         """
 
-        result: dict[str, str | int | dict[str, dict[str,str]]] = {}
+        result: dict = {}
 
         result["id"] = self.item_id.value
 

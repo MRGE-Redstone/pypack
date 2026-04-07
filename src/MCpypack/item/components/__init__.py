@@ -5,6 +5,7 @@ from .glider import Glider
 from .unbreakable import Unbreakable
 from .consumable import Consumable
 from .enchantment_glint_override import EnchantmentGlintOverride
+from .repairable import Repairable
 
 __all__: list[str] = [
     "ItemComponents",
@@ -12,4 +13,5 @@ __all__: list[str] = [
     "Unbreakable",
     "Consumable",
     "EnchantmentGlintOverride",
+    "Repairable",
 ]

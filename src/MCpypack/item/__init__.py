@@ -14,7 +14,7 @@ __all__: list[str] = [
 
 # Export components
 
-from .components import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride
+from .components import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable
 
 __all__ += [
     "ItemComponents",
@@ -22,4 +22,5 @@ __all__ += [
     "Unbreakable",
     "Consumable",
     "EnchantmentGlintOverride",
+    "Repairable",
 ]

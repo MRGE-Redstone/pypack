@@ -17,7 +17,7 @@ class ItemComponents:
             Components to add.
         """
 
-        self.config: dict[str, dict[str, str] | bool] | bool = {}
+        self.config: dict = {}
 
         for component in components:
             self.config[f"{component.TYPE}"] = component.to_value()
@@ -43,7 +43,7 @@ class ItemComponent(ABC):
         self.config: dict[str, str | bool]
 
     @abstractmethod
-    def to_value(self) -> dict[str, str] | bool:
+    def to_value(self) -> dict[str, str] | bool | dict[str, list[str] | str]:
         """
         Convert component to dictionary.
         """
