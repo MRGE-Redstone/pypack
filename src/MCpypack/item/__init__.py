@@ -14,7 +14,7 @@ __all__: list[str] = [
 
 # Export components
 
-from .components import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage
+from .components import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize
 
 __all__ += [
     "ItemComponents",
@@ -29,4 +29,5 @@ __all__ += [
     "Damage",
     "Weapon",
     "MaxDamage",
+    "MaxStackSize",
 ]

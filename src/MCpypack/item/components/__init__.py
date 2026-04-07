@@ -12,6 +12,7 @@ from .intangible_projectile import IntangibleProjectile
 from .damage import Damage
 from .weapon import Weapon
 from .max_damage import MaxDamage
+from .max_stack_size import MaxStackSize
 
 __all__: list[str] = [
     "ItemComponents",
@@ -26,4 +27,5 @@ __all__: list[str] = [
     "Damage",
     "Weapon",
     "MaxDamage",
+    "MaxStackSize",
 ]

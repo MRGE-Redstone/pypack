@@ -71,8 +71,8 @@ class CountedResult:
 
     @count.setter
     def count(self, value: int) -> None:
-        if not 1 <= value <= 64:
-            raise ValueError(f"count must be between 1 and 64, got {value}")
+        if not 1 <= value <= 99:
+            raise ValueError(f"count must be between 1 and 99, got {value}")
         self._count = value
 
     def to_dict(self) -> dict:
