@@ -11,6 +11,7 @@ from .attack_range import AttackRange
 from .intangible_projectile import IntangibleProjectile
 from .damage import Damage
 from .weapon import Weapon
+from .max_damage import MaxDamage
 
 __all__: list[str] = [
     "ItemComponents",
@@ -24,4 +25,5 @@ __all__: list[str] = [
     "IntangibleProjectile",
     "Damage",
     "Weapon",
+    "MaxDamage",
 ]
