@@ -16,6 +16,7 @@ from .max_stack_size import MaxStackSize
 from .minimum_attack_charge import MinumumAttackCharge
 from .food import Food
 from .ominous_bottle_amplifier import OminousBottleAmplifier
+from .use_remainder import UseRemainder
 
 __all__: list[str] = [
     "ItemComponents",
@@ -34,4 +35,5 @@ __all__: list[str] = [
     "MinumumAttackCharge",
     "Food",
     "OminousBottleAmplifier",
+    "UseRemainder",
 ]
