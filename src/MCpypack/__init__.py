@@ -3,21 +3,9 @@ from .core import Datapack, Namespace
 __all__: list[str] = ["Datapack", "Namespace"]
 
 # Recipes
-from .recipe import CraftingShaped, CraftingShapeless, CratfingTransmute, CraftingDecoratedPot, CampfireCooking, Smoking, Blasting, Smelting, Stonecutting, SmithingTransform, SmithingTrim, CraftingSpecialShieldDecoration
-
+from . import recipe
 __all__ += [
-    "CraftingShaped",
-    "CraftingShapeless",
-    "CratfingTransmute",
-    "CraftingDecoratedPot",
-    "CampfireCooking",
-    "Smelting",
-    "Smoking",
-    "Blasting",
-    "Stonecutting",
-    "SmithingTransform",
-    "SmithingTrim",
-    "CraftingSpecialShieldDecoration",
+    "recipe",
 ]
 
 # Times
