@@ -1,7 +1,9 @@
 # This file contains the repairable component
 
-from MCpypack.item import ItemLike
 from .components import ItemComponent
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from MCpypack.item import ItemLike
 
 class Repairable(ItemComponent):
     """

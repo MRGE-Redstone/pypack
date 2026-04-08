@@ -1,8 +1,6 @@
 # Core stuff
-from .core.datapack import Datapack
-from .core.namespace import Namespace
-
-__all__ = ["Datapack", "Namespace"]
+from .core import Datapack, Namespace
+__all__: list[str] = ["Datapack", "Namespace"]
 
 # Recipes
 from .recipe import CraftingShaped, CraftingShapeless, CratfingTransmute, CraftingDecoratedPot, CampfireCooking, Smoking, Blasting, Smelting, Stonecutting, SmithingTransform, SmithingTrim, CraftingSpecialShieldDecoration
@@ -46,35 +44,17 @@ __all__ += [
 ]
 
 # Items, Tags, TrimPatterns, Enchantment, DamageType
-from .item import Item, Tag, ItemLike, TrimPattern, Enchantment, DamageType
+from .item import item, tag, trim_pattern, enchantment, damage_type
 __all__ += [
-    "Item",
-    "Tag",
-    "ItemLike",
-    "TrimPattern",
-    "Enchantment",
-    "DamageType",
+    "item",
+    "tag",
+    "trim_pattern",
+    "enchantment",
+    "damage_type",
 ]
 
 # Components
-from .item import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food, OminousBottleAmplifier, UseRemainder, DamageType
+from .item import components
 __all__ += [
-    "ItemComponents",
-    "Glider",
-    "Unbreakable",
-    "Consumable",
-    "EnchantmentGlintOverride",
-    "Repairable",
-    "RepairCost",
-    "AttackRange",
-    "IntangibleProjectile",
-    "Damage",
-    "Weapon",
-    "MaxDamage",
-    "MaxStackSize",
-    "MinumumAttackCharge",
-    "Food",
-    "OminousBottleAmplifier",
-    "UseRemainder",
-    "DamageType",
+    "components",
 ]

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from packaging.version import Version
 
-from MCpypack.core import NAMESPACE_PATTERN
+from .valid import NAMESPACE_PATTERN
 from MCpypack.recipe.recipe import Recipe
 
 class Namespace:

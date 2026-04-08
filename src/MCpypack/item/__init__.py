@@ -4,39 +4,25 @@
 # Export Enchantment enum
 # Export DamageType enum
 
-from .final import Item, Tag, ItemLike, TrimPattern, Enchantment, DamageType
-
+from .final import items as item
+from .final import tags as tag
+from .final import trim_patterns as trim_pattern
+from .final import enchantments as enchantment
+from .final import damage_types as damage_type
+from .final import ItemLike
 __all__: list[str] = [
-    "Item",
-    "Tag",
+    "item",
+    "tag",
+    "trim_pattern",
+    "enchantment",
+    "damage_type",
     "ItemLike",
-    "TrimPattern",
-    "Enchantment",
-    "DamageType",
 ]
 
 
 # Export components
 
-from .components import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food, OminousBottleAmplifier, UseRemainder, DamageType
-
+from . import components
 __all__ += [
-    "ItemComponents",
-    "Glider",
-    "Unbreakable",
-    "Consumable",
-    "EnchantmentGlintOverride",
-    "Repairable",
-    "RepairCost",
-    "AttackRange",
-    "IntangibleProjectile",
-    "Damage",
-    "Weapon",
-    "MaxDamage",
-    "MaxStackSize",
-    "MinumumAttackCharge",
-    "Food",
-    "OminousBottleAmplifier",
-    "UseRemainder",
-    "DamageType",
+    "components"
 ]

@@ -2,7 +2,7 @@
 
 from .components import ItemComponent
 
-class MinumumAttackCharge(ItemComponent):
+class MinimumAttackCharge(ItemComponent):
     """
     Minimum attack charge item component.
     """

@@ -5,7 +5,9 @@
 from packaging.version import Version
 
 from .recipe import Recipe
-from MCpypack.item import ItemLike, TrimPattern
+from MCpypack.item import ItemLike
+from MCpypack.item import trim_pattern
+TrimPattern = trim_pattern.TrimPattern
 from .utils import SimpleResult
 
 class SmithingTransform(Recipe):
