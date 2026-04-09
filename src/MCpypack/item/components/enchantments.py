@@ -21,10 +21,16 @@ class Enchantments(ItemComponent):
         Parameters
         ----------
         enchantments:
-            Dictionary of enchantment and its level.
+            Dictionary of enchantments and their levels.
+            Levels must be greater than 0.
         """
 
         super().__init__()
+
+        # Level greater than 0
+        for enchantment, level in enchantments.items():
+            if not level > 0:
+                raise ValueError(f"Enchantment level must be greater than 0, got: {level} for {enchantment}!")
 
         self.enchantments: dict[str, int] = {enchantment.value: level for enchantment, level in enchantments.items()}
 

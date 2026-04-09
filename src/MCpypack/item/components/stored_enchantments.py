@@ -23,10 +23,16 @@ class StoredEnchantments(ItemComponent):
         Parameters
         ----------
         stored_enchantments:
-            Dictionary of stored enchantment and its level.
+            Dictionary of stored enchantments and their levels.
+            Levels must be greater than 0.
         """
 
         super().__init__()
+
+        # Level greater than 0
+        for enchantment, level in stored_enchantments.items():
+            if not level > 0:
+                raise ValueError(f"Enchantment level must be greater than 0, got: {level} for {enchantment}!")
 
         self.stored_enchantments: dict[str, int] = {enchantment.value: level for enchantment, level in stored_enchantments.items()}
 
