@@ -23,6 +23,7 @@ from .enchantments import Enchantments
 from .bundle_contents import BundleContents
 from .jukebox_playable import JukeboxPlayable
 from .container import Container
+from .base_color import BaseColor
 
 __all__: list[str] = [
     "ItemComponents",
@@ -47,5 +48,6 @@ __all__: list[str] = [
     "Enchantments",
     "BundleContents",
     "JukeboxPlayable",
-    "Container"
+    "Container",
+    "BaseColor",
 ]

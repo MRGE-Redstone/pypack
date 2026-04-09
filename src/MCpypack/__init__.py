@@ -31,6 +31,12 @@ __all__ += [
     "Category"
 ]
 
+# Color
+from .utils import Color
+__all__ += [
+    "Color"
+]
+
 # Items, Tags, TrimPatterns, Enchantment, DamageType, JukeboxSong
 from .item import item, tag, trim_pattern, enchantment, damage_type, jukebox_song
 __all__ += [
