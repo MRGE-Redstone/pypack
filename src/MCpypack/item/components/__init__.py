@@ -28,6 +28,7 @@ from .enchantable import Enchantable
 from .dye import Dye
 from .rarity import Rarity
 from .use_effects import UseEffects
+from .provides_trim_material import ProvidesTrimMaterial
 
 __all__: list[str] = [
     "ItemComponents",
@@ -58,4 +59,5 @@ __all__: list[str] = [
     "Dye",
     "Rarity",
     "UseEffects",
+    "ProvidesTrimMaterial",
 ]

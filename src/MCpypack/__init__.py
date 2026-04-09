@@ -43,12 +43,13 @@ __all__ += [
     "Rarity"
 ]
 
-# Items, Tags, TrimPatterns, Enchantment, DamageType, JukeboxSong
-from .item import item, tag, trim_pattern, enchantment, damage_type, jukebox_song
+# Items, Tags, TrimPatterns, TrimMaterials, Enchantment, DamageType, JukeboxSong
+from .item import item, tag, trim_pattern, trim_material, enchantment, damage_type, jukebox_song
 __all__ += [
     "item",
     "tag",
     "trim_pattern",
+    "trim_material",
     "enchantment",
     "damage_type",
     "jukebox_song"
