@@ -20,6 +20,7 @@ from .use_remainder import UseRemainder
 from .damage_type import DamageType
 from .stored_enchantments import StoredEnchantments
 from .enchantments import Enchantments
+from .bundle_contents import BundleContents
 
 __all__: list[str] = [
     "ItemComponents",
@@ -41,5 +42,6 @@ __all__: list[str] = [
     "UseRemainder",
     "DamageType",
     "StoredEnchantments",
-    "Enchantments"
+    "Enchantments",
+    "BundleContents"
 ]

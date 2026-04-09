@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     # We use this to avoid circular imports
-    from MCpypack.recipe import CountedResult
+    from MCpypack.utils import CountedResult
 
 class UseRemainder(ItemComponent):
     """

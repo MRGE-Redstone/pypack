@@ -34,6 +34,5 @@ class Enchantments(ItemComponent):
 
         self.enchantments: dict[str, int] = {enchantment.value: level for enchantment, level in enchantments.items()}
 
-
     def to_value(self) -> dict[str, int]:
         return self.enchantments
