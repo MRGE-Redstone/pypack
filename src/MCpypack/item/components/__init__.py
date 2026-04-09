@@ -25,6 +25,7 @@ from .jukebox_playable import JukeboxPlayable
 from .container import Container
 from .base_color import BaseColor
 from .enchantable import Enchantable
+from .dye import Dye
 
 __all__: list[str] = [
     "ItemComponents",
@@ -52,4 +53,5 @@ __all__: list[str] = [
     "Container",
     "BaseColor",
     "Enchantable",
+    "Dye",
 ]
