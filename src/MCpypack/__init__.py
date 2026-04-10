@@ -1,29 +1,15 @@
 # Core stuff
-from .core.datapack import Datapack
-from .core.namespace import Namespace
-
-__all__ = ["Datapack", "Namespace"]
+from .core import Datapack, Namespace
+__all__: list[str] = ["Datapack", "Namespace"]
 
 # Recipes
-from .recipe import CraftingShaped, CraftingShapeless, CratfingTransmute, CraftingDecoratedPot, CampfireCooking, Smoking, Blasting, Smelting, Stonecutting, SmithingTransform, SmithingTrim, CraftingSpecialShieldDecoration
-
+from . import recipe
 __all__ += [
-    "CraftingShaped",
-    "CraftingShapeless",
-    "CratfingTransmute",
-    "CraftingDecoratedPot",
-    "CampfireCooking",
-    "Smelting",
-    "Smoking",
-    "Blasting",
-    "Stonecutting",
-    "SmithingTransform",
-    "SmithingTrim",
-    "CraftingSpecialShieldDecoration",
+    "recipe",
 ]
 
 # Times
-from .recipe import Milliseconds, Seconds, Minutes, Hours, Time
+from .utils import Milliseconds, Seconds, Minutes, Hours, Time
 __all__ += [
     "Milliseconds",
     "Seconds",
@@ -33,45 +19,44 @@ __all__ += [
 ]
 
 # Result
-from .recipe import SimpleResult, CountedResult
+from .utils import SimpleResult, CountedResult
 __all__ += [
     "SimpleResult",
     "CountedResult"
 ]
 
 # Category
-from .recipe import Category
+from .utils import Category
 __all__ += [
     "Category"
 ]
 
-# Items, Tags, TrimPatterns
-from .item import Item, Tag, ItemLike, TrimPattern
+# Color
+from .utils import Color
 __all__ += [
-    "Item",
-    "Tag",
-    "ItemLike",
-    "TrimPattern",
+    "Color"
+]
+
+# Rarity
+from .utils import Rarity
+__all__ += [
+    "Rarity"
+]
+
+# Items, Tags, TrimPatterns, TrimMaterials, Enchantment, DamageType, JukeboxSong
+from .item import item, tag, trim_pattern, trim_material, enchantment, damage_type, jukebox_song
+__all__ += [
+    "item",
+    "tag",
+    "trim_pattern",
+    "trim_material",
+    "enchantment",
+    "damage_type",
+    "jukebox_song"
 ]
 
 # Components
-from .item import ItemComponents, Glider, Unbreakable, Consumable, EnchantmentGlintOverride, Repairable, RepairCost, AttackRange, IntangibleProjectile, Damage, Weapon, MaxDamage, MaxStackSize, MinumumAttackCharge, Food, OminousBottleAmplifier, UseRemainder
+from .item import components
 __all__ += [
-    "ItemComponents",
-    "Glider",
-    "Unbreakable",
-    "Consumable",
-    "EnchantmentGlintOverride",
-    "Repairable",
-    "RepairCost",
-    "AttackRange",
-    "IntangibleProjectile",
-    "Damage",
-    "Weapon",
-    "MaxDamage",
-    "MaxStackSize",
-    "MinumumAttackCharge",
-    "Food",
-    "OminousBottleAmplifier",
-    "UseRemainder",
+    "components",
 ]

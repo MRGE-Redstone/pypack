@@ -1,7 +1,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from .utils import Category, CategoryLike, Group, CountedResult
+from MCpypack.utils import Category, CategoryLike, Group, CountedResult
 from .recipe import Recipe
 
 class CraftingShaped(Recipe):

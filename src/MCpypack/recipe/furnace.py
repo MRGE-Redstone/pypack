@@ -10,7 +10,7 @@ from packaging.version import Version
 
 from MCpypack.item import ItemLike
 from .recipe import Recipe
-from .utils import Time, SimpleResult, Group, CategoryLike, Category, Experience, CountedResult
+from MCpypack.utils import Time, SimpleResult, Group, CategoryLike, Category, Experience, CountedResult
 
 from abc import ABC, abstractmethod
 

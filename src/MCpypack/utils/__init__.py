@@ -4,6 +4,8 @@
 # Export SimpleResult, CountedResult
 # Export Experience
 # Export Time, Milliseconds, Seconds, Minutes, and Hours
+# Export Color
+# Export Rarity
 
 __all__: list[str] = []
 
@@ -21,3 +23,9 @@ __all__ += ["Experience"]
 
 from .times import Time, Milliseconds, Seconds, Minutes, Hours
 __all__ += ["Time", "Milliseconds", "Seconds", "Minutes", "Hours"]
+
+from .color import Color
+__all__ += ["Color"]
+
+from .rarity import Rarity
+__all__ += ["Rarity"]

@@ -3,7 +3,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from .utils import SimpleResult, Time, Experience, CountedResult
+from MCpypack.utils import SimpleResult, Time, Experience, CountedResult
 from .recipe import Recipe
 
 class CampfireCooking(Recipe):

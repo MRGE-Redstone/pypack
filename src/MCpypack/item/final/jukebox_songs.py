@@ -1,0 +1,25 @@
+from enum import Enum
+
+
+class JukeboxSong(Enum):
+    SONG_5 = "minecraft:song_5"
+    SONG_11 = "minecraft:song_11"
+    SONG_13 = "minecraft:song_13"
+    BLOCKS = "minecraft:blocks"
+    CAT = "minecraft:cat"
+    CHIRP = "minecraft:chirp"
+    CREATOR = "minecraft:creator"
+    CREATOR_MUSIC_BOX = "minecraft:creator_music_box"
+    FAR = "minecraft:far"
+    LAVA_CHICKEN = "minecraft:lava_chicken"
+    MALL = "minecraft:mall"
+    MELLOHI = "minecraft:mellohi"
+    OTHERSIDE = "minecraft:otherside"
+    PIGSTEP = "minecraft:pigstep"
+    PRECIPICE = "minecraft:precipice"
+    RELIC = "minecraft:relic"
+    STAL = "minecraft:stal"
+    STRAD = "minecraft:strad"
+    TEARS = "minecraft:tears"
+    WAIT = "minecraft:wait"
+    WARD = "minecraft:ward"

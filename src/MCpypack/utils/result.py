@@ -6,7 +6,9 @@
 
 from dataclasses import dataclass
 
-from MCpypack.item import Item, ItemComponents
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from MCpypack.item import item, components
 
 @dataclass
 class SimpleResult:
@@ -14,8 +16,8 @@ class SimpleResult:
     Result of a recipe that does not contain an item count.
     """
 
-    item_id: Item
-    components: ItemComponents | None = None
+    item_id: item.Item
+    components: components.ItemComponents | None = None
 
     def to_dict(self) -> dict:
         """
@@ -43,9 +45,9 @@ class CountedResult:
     """
 
     def __init__(self,
-                 item_id: Item,
+                 item_id: item.Item,
                  count: int = 1,
-                 components: ItemComponents | None = None,
+                 components: components.ItemComponents | None = None,
                  ) -> None:
         """
         Init a new recipe with a count.
@@ -60,10 +62,9 @@ class CountedResult:
             Additional components the item should get.
         """
 
-        self.item_id: Item = item_id
+        self.item_id: item.Item = item_id
         self.count = count
-        if components is not None:
-            self.components: ItemComponents = components
+        self.components: components.ItemComponents | None = components
 
     @property
     def count(self) -> int:

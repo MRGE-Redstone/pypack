@@ -2,7 +2,7 @@ from packaging.version import Version
 
 from MCpypack.item import ItemLike
 
-from .utils import CountedResult
+from MCpypack.utils import CountedResult
 from .recipe import Recipe
 
 class Stonecutting(Recipe):

@@ -43,7 +43,7 @@ class ItemComponent(ABC):
         self.config: dict[str, str | bool]
 
     @abstractmethod
-    def to_value(self) -> dict[str, str] | bool | dict[str, list[str] | str] | int | float:
+    def to_value(self) -> dict[str, str] | bool | dict[str, list[str] | str] | int | float | str | dict[str, int] | list[dict]:
         """
         Convert component to dictionary.
         """

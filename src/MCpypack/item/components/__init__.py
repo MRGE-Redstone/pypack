@@ -13,10 +13,23 @@ from .damage import Damage
 from .weapon import Weapon
 from .max_damage import MaxDamage
 from .max_stack_size import MaxStackSize
-from .minimum_attack_charge import MinumumAttackCharge
+from .minimum_attack_charge import MinimumAttackCharge
 from .food import Food
 from .ominous_bottle_amplifier import OminousBottleAmplifier
 from .use_remainder import UseRemainder
+from .damage_type import DamageType
+from .stored_enchantments import StoredEnchantments
+from .enchantments import Enchantments
+from .bundle_contents import BundleContents
+from .jukebox_playable import JukeboxPlayable
+from .container import Container
+from .base_color import BaseColor
+from .enchantable import Enchantable
+from .dye import Dye
+from .rarity import Rarity
+from .use_effects import UseEffects
+from .provides_trim_material import ProvidesTrimMaterial
+from .bucket_entity_data import BucketEntityData
 
 __all__: list[str] = [
     "ItemComponents",
@@ -32,8 +45,21 @@ __all__: list[str] = [
     "Weapon",
     "MaxDamage",
     "MaxStackSize",
-    "MinumumAttackCharge",
+    "MinimumAttackCharge",
     "Food",
     "OminousBottleAmplifier",
     "UseRemainder",
+    "DamageType",
+    "StoredEnchantments",
+    "Enchantments",
+    "BundleContents",
+    "JukeboxPlayable",
+    "Container",
+    "BaseColor",
+    "Enchantable",
+    "Dye",
+    "Rarity",
+    "UseEffects",
+    "ProvidesTrimMaterial",
+    "BucketEntityData",
 ]

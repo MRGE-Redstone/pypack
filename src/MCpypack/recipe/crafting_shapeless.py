@@ -1,9 +1,12 @@
 from packaging.version import Version
 
-from MCpypack.item import ItemLike, Item, Tag
 
-from .utils import Category, CategoryLike, Group, CountedResult
+from MCpypack.utils import Category, CategoryLike, Group, CountedResult
 from .recipe import Recipe
+
+from MCpypack.item import ItemLike, item, tag
+Item = item.Item
+Tag = tag.Tag
 
 class CraftingShapeless(Recipe):
     """

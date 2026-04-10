@@ -3,7 +3,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from MCpypack.recipe.utils import CountedResult
+from MCpypack.utils import CountedResult
 from MCpypack.recipe.recipe import Recipe
 
 class CraftingSpecialShieldDecoration(Recipe):
