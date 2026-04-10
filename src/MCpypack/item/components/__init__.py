@@ -29,6 +29,7 @@ from .dye import Dye
 from .rarity import Rarity
 from .use_effects import UseEffects
 from .provides_trim_material import ProvidesTrimMaterial
+from .bucket_entity_data import BucketEntityData
 
 __all__: list[str] = [
     "ItemComponents",
@@ -60,4 +61,5 @@ __all__: list[str] = [
     "Rarity",
     "UseEffects",
     "ProvidesTrimMaterial",
+    "BucketEntityData",
 ]
