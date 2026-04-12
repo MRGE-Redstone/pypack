@@ -6,6 +6,7 @@
 # Export Time, Milliseconds, Seconds, Minutes, and Hours
 # Export Color
 # Export Rarity
+# Export SwingAnimation
 
 __all__: list[str] = []
 
@@ -29,3 +30,6 @@ __all__ += ["Color"]
 
 from .rarity import Rarity
 __all__ += ["Rarity"]
+
+from .swing_animation import SwingAnimation
+__all__ += ["SwingAnimation"]

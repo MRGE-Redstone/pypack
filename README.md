@@ -62,6 +62,10 @@ ns1.add_recipes(
                         Enchantment.KNOCKBACK: 50,
                         Enchantment.SHARPNESS: 5,
                     }
+                ),
+                components.SwingAnimation(
+                    animation_type=SwingAnimation.STAB,
+                    duration=10,
                 )
             )
         )

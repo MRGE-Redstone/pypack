@@ -30,6 +30,7 @@ from .rarity import Rarity
 from .use_effects import UseEffects
 from .provides_trim_material import ProvidesTrimMaterial
 from .bucket_entity_data import BucketEntityData
+from .swing_animation import SwingAnimation
 
 __all__: list[str] = [
     "ItemComponents",
@@ -62,4 +63,5 @@ __all__: list[str] = [
     "UseEffects",
     "ProvidesTrimMaterial",
     "BucketEntityData",
+    "SwingAnimation",
 ]

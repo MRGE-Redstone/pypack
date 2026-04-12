@@ -43,6 +43,12 @@ __all__ += [
     "Rarity"
 ]
 
+# SwingAnimation
+from .utils import SwingAnimation
+__all__ += [
+    "SwingAnimation"
+]
+
 # Items, Tags, TrimPatterns, TrimMaterials, Enchantment, DamageType, JukeboxSong
 from .item import item, tag, trim_pattern, trim_material, enchantment, damage_type, jukebox_song
 __all__ += [
