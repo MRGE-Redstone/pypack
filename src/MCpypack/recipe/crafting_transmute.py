@@ -3,7 +3,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from MCpypack.utils import Category, CategoryLike, Group, SimpleResult
+from MCpypack.utils import Category, CategoryLike, Group, ItemStack
 from .recipe import Recipe
 
 
@@ -30,7 +30,7 @@ class CraftingTransmute(Recipe):
                  name: str,
                  input: ItemLike,
                  material: ItemLike,
-                 result: SimpleResult,
+                 result: ItemStack,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,
                  ) -> None:

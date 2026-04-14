@@ -3,7 +3,7 @@
 from .components import ItemComponent
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from MCpypack.utils import CountedResult
+    from MCpypack.utils import ItemStack
 
 class Container(ItemComponent):
     """
@@ -19,7 +19,7 @@ class Container(ItemComponent):
         return self._container
 
     @container.setter
-    def container(self, value: dict[int, CountedResult]) -> None:
+    def container(self, value: dict[int, ItemStack]) -> None:
         _container: dict[int, dict] = {}
         for slot, item_stack in value.items():
             if slot < 0:
@@ -29,7 +29,7 @@ class Container(ItemComponent):
 
         self._container = _container
 
-    def __init__(self, container: dict[int, CountedResult]) -> None:
+    def __init__(self, container: dict[int, ItemStack]) -> None:
         """
         Init container item component.
 

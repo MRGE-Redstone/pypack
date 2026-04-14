@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     # We use this to avoid circular imports
-    from MCpypack.utils import CountedResult
+    from MCpypack.utils import ItemStack
 
 class UseRemainder(ItemComponent):
     """
@@ -18,7 +18,7 @@ class UseRemainder(ItemComponent):
     def TYPE(self) -> str:
         return "minecraft:use_remainder"
 
-    def __init__(self, use_remainder: CountedResult) -> None:
+    def __init__(self, use_remainder: ItemStack) -> None:
         """
         Init use remainder component.
 

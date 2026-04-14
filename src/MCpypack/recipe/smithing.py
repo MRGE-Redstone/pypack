@@ -8,7 +8,7 @@ from .recipe import Recipe
 from MCpypack.item import ItemLike
 from MCpypack.item import trim_pattern
 TrimPattern = trim_pattern.TrimPattern
-from MCpypack.utils import SimpleResult
+from MCpypack.utils import ItemStack
 
 class SmithingTransform(Recipe):
     """
@@ -29,7 +29,7 @@ class SmithingTransform(Recipe):
     def __init__(self,
                  name: str,
                  base: ItemLike,
-                 result: SimpleResult,
+                 result: ItemStack,
                  addition: ItemLike | None = None,
                  template: ItemLike | None = None,
                  ) -> None:

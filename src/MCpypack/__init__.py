@@ -18,11 +18,10 @@ __all__ += [
     "Time"
 ]
 
-# Result
-from .utils import SimpleResult, CountedResult
+# ItemStack
+from .utils import ItemStack
 __all__ += [
-    "SimpleResult",
-    "CountedResult"
+    "ItemStack"
 ]
 
 # Category

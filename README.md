@@ -23,7 +23,7 @@ pip intall MCpypack
 ```python
 from MCpypack.core import Datapack, Namespace
 from MCpypack.recipe import CraftingShapeless
-from MCpypack.utils import CountedResult, Rarity, SwingAnimation
+from MCpypack.utils import ItemStack, Rarity, SwingAnimation
 from MCpypack import components
 from MCpypack.item.final import Item, Enchantment, DamageType
 
@@ -38,7 +38,7 @@ ns1.add_recipes(
     CraftingShapeless(
         name="python",
         ingredients=[Item.DIAMOND_SWORD, Item.COPPER_INGOT],
-        result=CountedResult(
+        result=ItemStack(
             Item.COPPER_SWORD,
             count=1,
             components=components.ItemComponents(

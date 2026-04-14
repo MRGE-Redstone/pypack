@@ -1,7 +1,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from MCpypack.utils import Category, CategoryLike, Group, CountedResult
+from MCpypack.utils import Category, CategoryLike, Group, ItemStack
 from .recipe import Recipe
 
 class CraftingShaped(Recipe):
@@ -24,7 +24,7 @@ class CraftingShaped(Recipe):
                  name: str,
                  pattern: list[str],
                  key: dict[str, ItemLike],
-                 result: CountedResult,
+                 result: ItemStack,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,
                  show_notification: bool | None = None,

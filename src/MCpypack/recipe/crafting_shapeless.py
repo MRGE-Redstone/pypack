@@ -1,7 +1,7 @@
 from packaging.version import Version
 
 
-from MCpypack.utils import Category, CategoryLike, Group, CountedResult
+from MCpypack.utils import Category, CategoryLike, Group, ItemStack
 from .recipe import Recipe
 
 from MCpypack.item import ItemLike, item, tag
@@ -27,7 +27,7 @@ class CraftingShapeless(Recipe):
     def __init__(self,
                  name: str,
                  ingredients: ItemLike | list[ItemLike],
-                 result: CountedResult,
+                 result: ItemStack,
                  group: Group | None = None,
                  category: CategoryLike = Category.MISC,
                  ) -> None:

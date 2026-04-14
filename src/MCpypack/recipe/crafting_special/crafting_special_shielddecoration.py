@@ -3,7 +3,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from MCpypack.utils import CountedResult
+from MCpypack.utils import ItemStack
 from MCpypack.recipe.recipe import Recipe
 
 class CraftingSpecialShieldDecoration(Recipe):
@@ -26,7 +26,7 @@ class CraftingSpecialShieldDecoration(Recipe):
                  name: str,
                  target: ItemLike,
                  banner: ItemLike,
-                 result: CountedResult,
+                 result: ItemStack,
                  ) -> None:
         """
         Init special shield decoration crafting recipe.

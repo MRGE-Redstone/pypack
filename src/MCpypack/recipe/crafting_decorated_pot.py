@@ -3,7 +3,7 @@
 from packaging.version import Version
 
 from MCpypack.item import ItemLike
-from MCpypack.utils import CountedResult
+from MCpypack.utils import ItemStack
 from .recipe import Recipe
 
 class CraftingDecoratedPot(Recipe):
@@ -28,7 +28,7 @@ class CraftingDecoratedPot(Recipe):
                  right: ItemLike,
                  front: ItemLike,
                  back: ItemLike,
-                 result: CountedResult,
+                 result: ItemStack,
                  ) -> None:
         """
         Init decorated pot crafting recipe.

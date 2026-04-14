@@ -10,7 +10,7 @@ from packaging.version import Version
 
 from MCpypack.item import ItemLike
 from .recipe import Recipe
-from MCpypack.utils import Time, SimpleResult, Group, CategoryLike, Category, Experience, CountedResult
+from MCpypack.utils import Time, Group, CategoryLike, Category, Experience, ItemStack
 
 from abc import ABC, abstractmethod
 
@@ -31,24 +31,13 @@ class Furnace(Recipe, ABC):
         # This just returns True.
         # Later in development, when working for version-heavy checking this
         # will be implemented correctly.
-        # In 26.1 Minecraft added the count field to furnace recipes.
-        # Therefore, we must check if the Datapack is developed for a version
-        # prior to 26.1 and if it cannot contain a count field.
-        # Also in the future I might find a better way the handle version
-        # differences.
-        # But for now I am not planning to handle features prior to 1.21 if not
-        # really necessary.
-
-        if version < Version("26.1"):
-            if self.result_type != SimpleResult:
-                raise ValueError("In versions prior to 26.1 this recipe did not support CountedResult")
 
         return True
 
     def __init__(self,
                 name: str,
                 ingredient: ItemLike,
-                result: SimpleResult | CountedResult,
+                result: ItemStack,
                 cookingtime: Time | None = None,
                 group: Group | None = None,
                 category: CategoryLike = Category.MISC,
@@ -76,8 +65,6 @@ class Furnace(Recipe, ABC):
         experience:
             Optional. The output experience of the recipe.
         """
-
-        self.result_type: type[SimpleResult] | type[CountedResult] = type(result)
 
         super().__init__(name)
 

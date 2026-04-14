@@ -4,7 +4,7 @@ from .components import ItemComponent
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from MCpypack.utils import CountedResult
+    from MCpypack.utils import ItemStack
 
 class BundleContents(ItemComponent):
     """
@@ -15,7 +15,7 @@ class BundleContents(ItemComponent):
     def TYPE(self) -> str:
         return "minecraft:bundle_contents"
 
-    def __init__(self, bundle_contents: list[CountedResult]) -> None:
+    def __init__(self, bundle_contents: list[ItemStack]) -> None:
         """
         Init bundle contents component.
 

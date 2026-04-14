@@ -2,7 +2,7 @@ from packaging.version import Version
 
 from MCpypack.item import ItemLike
 
-from MCpypack.utils import CountedResult
+from MCpypack.utils import ItemStack
 from .recipe import Recipe
 
 class Stonecutting(Recipe):
@@ -24,7 +24,7 @@ class Stonecutting(Recipe):
     def __init__(self,
                  name: str,
                  ingredient: ItemLike,
-                 result: CountedResult,
+                 result: ItemStack,
                  ) -> None:
         """
         Init stonecutting recipe.
