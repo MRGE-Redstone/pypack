@@ -7,7 +7,8 @@
 
 - Create Minecraft Datapacks easily using Python
 
-⚠️ **Early Development:** This project is still in early development. Features may change and bugs may occur.
+> [!WARNING]
+> This project is still in early development. Features may change and bugs may occur.
 
 ## Features
 - Easy datapack creation
