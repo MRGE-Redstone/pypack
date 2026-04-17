@@ -1,0 +1,113 @@
+# Roadmap of MCpypack
+
+## ItemStack
+
+- [ ] Support all components
+    - [x] AttackRange
+    - [ ] AttributeModifiers
+    - [ ] BannerPatterns
+    - [x] BaseColor
+    - [ ] Bees
+    - [ ] BlockEntityData
+    - [ ] BlockState
+    - [ ] BlocksAttacks
+    - [ ] BreakSound
+    - [x] BucketEntityData
+    - [x] BundleContents
+    - [ ] CanBreak
+    - [ ] CanPlaceOn
+    - [ ] ChargedProjectiles
+    - [ ] Consumable
+    - [x] Container
+    - [ ] ContainerLoot
+    - [ ] CustomData
+    - [ ] CustomModelData
+    - [ ] CustomName
+    - [x] Damage
+    - [ ] DamageResistant
+    - [x] DamageType
+    - [ ] DeathProtection
+    - [ ] DebugStickState
+    - [x] Dye
+    - [ ] DyedColor
+    - [x] Enchantable
+    - [x] EnchantmentGlintOverride
+    - [x] Enchantments
+    - [ ] EntityData
+    - [ ] Equippable
+    - [ ] FireworkExplosion
+    - [ ] Fireworks
+    - [x] Food
+    - [x] Glider
+    - [ ] Instrument
+    - [x] IntangibleProjectile
+    - [ ] ItemModel
+    - [ ] ItemName
+    - [x] JukeboxPlayable
+    - [ ] KineticWeapon
+    - [ ] Lock
+    - [ ] LodestoneTracker
+    - [ ] Lore
+    - [ ] MapColor
+    - [ ] MapDecorations
+    - [ ] MapId
+    - [x] MaxDamage
+    - [x] MaxStackSize
+    - [x] MinimumAttackCharge
+    - [ ] NoteBlockSound
+    - [x] OminousBottleAmplifier
+    - [ ] PiercingWeapon
+    - [ ] PotDecorations
+    - [ ] PotionContents
+    - [ ] PotionDurationScale
+    - [ ] Profile
+    - [ ] ProvidesBannerPatterns
+    - [x] ProvidesTrimMaterial
+    - [x] Rarity
+    - [ ] Recipes
+    - [x] RepairCost
+    - [x] Repairable
+    - [x] StoredEnchantments
+    - [ ] SulfurCubeContent [upcoming: JE 26.2]
+    - [ ] SuspiciousStewEffects
+    - [x] SwingAnimation
+    - [ ] Tool
+    - [ ] TooltipDisplay
+    - [ ] TooltipStyle
+    - [ ] Trim
+    - [x] Unbreakable
+    - [ ] UseCooldown
+    - [x] UseEffects
+    - [x] UseRemainder
+    - [x] Weapon
+    - [ ] WritableBookContent
+    - [ ] WrittenBookContent
+- [ ] Support removing components
+
+## Recipes
+
+- [ ] Support all recipe types
+    - [x] CraftingShaped
+    - [x] CraftingShapeless
+    - [x] CraftingTransmute
+    - [x] CraftingDecoratedPot
+    - [x] CampfireCooking
+    - [x] Smelting
+    - [x] Blasting
+    - [x] Smoking
+    - [x] SmithingTrim
+    - [x] SmithingTransform
+    - [x] Stonecutting
+    - [ ] CraftingSpecial
+        - [ ] Armordye
+        - [ ] Bannerduplicate
+        - [ ] Bookcloning
+        - [ ] FireworkRocket
+        - [ ] FireworkStar
+        - [ ] FireworkStarFade
+        - [ ] Mapcloning
+        - [ ] Mapextending
+        - [ ] Repairitem
+        - [x] Shielddecoration
+        - [ ] Tippedarrow
+- [ ] Loading recipes from json into Python object
