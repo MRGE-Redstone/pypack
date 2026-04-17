@@ -85,5 +85,8 @@ pack.export()
 ## Tests
 - We use [pytest](https://pytest.org)
 
+## Roadmap
+- See our [Roadmap](ROADMAP.md)
+
 ## License
 - This project is licensed under the [GNU General Public License v3.0](LICENSE) (GPL-3.0).
