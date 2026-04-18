@@ -43,7 +43,7 @@ def test_color_from_str_invalid_value():
 # ===== HexColor ===== #
 
 def test_hex_color_right_value():
-    assert HexColor("12aB4E").color == "12aB4E".upper()
+    assert HexColor("12aB4E").color == "#12aB4E".upper()
 
 def test_hex_color_invalid_type():
     with pytest.raises(ValueError):
@@ -58,7 +58,7 @@ def test_hex_color_invalid_chars():
         HexColor("11qea3")
 
 def test_hex_color_from_str():
-    assert HexColor.from_str("12aB4E").color == "12aB4E".upper()
+    assert HexColor.from_str("12aB4E").color == "#12aB4E".upper()
 
 # ===== TextColor ===== #
 

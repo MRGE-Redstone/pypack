@@ -75,7 +75,7 @@ class HexColor:
         if not self.HEX_PATTERN.fullmatch(value):
             raise ValueError(f"color must be a valid 6-digit hex string, got: {value}")
 
-        self._color = value.upper()
+        self._color = f"#{value.upper()}"
 
     def __init__(self,
                  color: str
