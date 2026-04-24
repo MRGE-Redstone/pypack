@@ -17,6 +17,9 @@ class MaxStackSize(ItemComponent):
 
     @max_stack_size.setter
     def max_stack_size(self, value: int) -> None:
+        if not isinstance(value, int):
+            raise TypeError(f"max_stack_size must be of type int, got: {type(value)}")
+
         if not 1 <= value <= 99:
             raise ValueError(f"max_stack_size must be an integer between 1 and 99, got : max_stack_size = {value}")
 

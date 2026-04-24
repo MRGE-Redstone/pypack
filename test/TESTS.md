@@ -35,7 +35,7 @@ We use pytest for testing.
 - [ ] src/MCpypack/item/components/jukebox_playable.py
 - [x] src/MCpypack/item/components/max_damage.py
 - [x] src/MCpypack/item/components/max_stack_size.py
-- [ ] src/MCpypack/item/components/minimum_attack_charge.py
+- [x] src/MCpypack/item/components/minimum_attack_charge.py
 - [ ] src/MCpypack/item/components/ominous_bottle_amplifier.py
 - [ ] src/MCpypack/item/components/provides_trim_material.py
 - [ ] src/MCpypack/item/components/rarity.py
