@@ -24,7 +24,7 @@ pip intall MCpypack
 ```python
 from MCpypack.core import Datapack, Namespace
 from MCpypack.recipe import CraftingShapeless
-from MCpypack.utils import ItemStack, Rarity, SwingAnimation
+from MCpypack.utils import ItemStack, Rarity, SwingAnimation, PlainText, TextColor, Formatting
 from MCpypack import components
 from MCpypack.item.final import Item, Enchantment, DamageType
 
@@ -67,7 +67,14 @@ ns1.add_recipes(
                 components.SwingAnimation(
                     animation_type=SwingAnimation.STAB,
                     duration=10,
-                )
+                ),
+                components.ItemName(PlainText(
+                    text="MCpypack Sword",
+                    formatting=Formatting(
+                        color=TextColor.AQUA,
+                        bold=True,
+                    )
+                ))
             )
         )
     ),
@@ -85,6 +92,7 @@ pack.export()
 
 ## Tests
 - We use [pytest](https://pytest.org)
+- See an overview of the tests [here](test/TESTS.md)
 
 ## Roadmap
 - See our [Roadmap](ROADMAP.md)

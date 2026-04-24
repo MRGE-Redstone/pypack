@@ -17,6 +17,9 @@ class MaxDamage(ItemComponent):
 
     @max_damage.setter
     def max_damage(self, value: int) -> None:
+        if not isinstance(value, int):
+            raise TypeError(f"max_damage must be of type int, got: {type(value)}")
+
         if not 0 < value:
             raise ValueError(f"max_damage must be a non-zero positive integer, got : {value}")
 

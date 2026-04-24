@@ -17,6 +17,9 @@ class MinimumAttackCharge(ItemComponent):
 
     @minimum_attack_charge.setter
     def minimum_attack_charge(self, value: float) -> None:
+        if not isinstance(value, float):
+            raise TypeError(f"minimum_attack_charge must be of type float, got: {type(value)}")
+
         if not 0.0 <= value <= 1.0:
             raise ValueError(f"minimum_attack_charge must be a non-negative float between 0.0 and 1.0, got : minimum_attack_charge = {value}")
 

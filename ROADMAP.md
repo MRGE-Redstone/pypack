@@ -22,7 +22,7 @@
     - [ ] ContainerLoot
     - [ ] CustomData
     - [ ] CustomModelData
-    - [ ] CustomName
+    - [x] CustomName
     - [x] Damage
     - [ ] DamageResistant
     - [x] DamageType
@@ -42,7 +42,7 @@
     - [ ] Instrument
     - [x] IntangibleProjectile
     - [ ] ItemModel
-    - [ ] ItemName
+    - [x] ItemName
     - [x] JukeboxPlayable
     - [ ] KineticWeapon
     - [ ] Lock

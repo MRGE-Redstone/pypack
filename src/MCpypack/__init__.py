@@ -30,10 +30,12 @@ __all__ += [
     "Category"
 ]
 
-# Color
-from .utils import Color
+# Colors
+from .utils import Color, HexColor, TextColor
 __all__ += [
-    "Color"
+    "Color",
+    "HexColor",
+    "TextColor",
 ]
 
 # Rarity
@@ -64,4 +66,11 @@ __all__ += [
 from .item import components
 __all__ += [
     "components",
+]
+
+# Text
+from .utils import Formatting, PlainText
+__all__ += [
+    "Formatting",
+    "PlainText",
 ]

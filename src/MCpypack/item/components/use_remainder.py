@@ -1,12 +1,9 @@
 # This file contains the use_remainder component
 
+from pytest import raises
 from .components import ItemComponent
-from typing import TYPE_CHECKING
 
-
-if TYPE_CHECKING:
-    # We use this to avoid circular imports
-    from MCpypack.utils import ItemStack
+from MCpypack.utils import ItemStack
 
 class UseRemainder(ItemComponent):
     """
@@ -17,6 +14,17 @@ class UseRemainder(ItemComponent):
     @property
     def TYPE(self) -> str:
         return "minecraft:use_remainder"
+
+    @property
+    def use_remainder(self) -> ItemStack:
+        return self._use_remainder
+
+    @use_remainder.setter
+    def use_remainder(self, use_remainder: ItemStack) -> None:
+        if not isinstance(use_remainder, ItemStack):
+            raise TypeError(f"use_remainder must be of type ItemStack, got: {type(use_remainder)}")
+
+        self._use_remainder = use_remainder
 
     def __init__(self, use_remainder: ItemStack) -> None:
         """
