@@ -17,7 +17,7 @@ We use pytest for testing.
 - [x] src/MCpypack/item/components/base_color.py
 - [x] src/MCpypack/item/components/bucket_entity_data.py
 - [x] src/MCpypack/item/components/bundle_contents.py
-- [ ] src/MCpypack/item/components/charged_projectiles.py
+- [x] src/MCpypack/item/components/charged_projectiles.py
 - [x] src/MCpypack/item/components/components.py
 - [ ] src/MCpypack/item/components/consumable.py
 - [ ] src/MCpypack/item/components/container.py
