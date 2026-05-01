@@ -11,6 +11,7 @@ from .smithing import SmithingTransform, SmithingTrim
 from .crafting_special import (
     CraftingSpecialShieldDecoration,
     CraftingSpecialBannerDuplicate,
+    CraftingSpecialRepairItem,
 )
 
 __all__: list[str] = [
@@ -27,4 +28,5 @@ __all__: list[str] = [
     "SmithingTrim",
     "CraftingSpecialShieldDecoration",
     "CraftingSpecialBannerDuplicate",
+    "CraftingSpecialRepairItem",
 ]

@@ -107,7 +107,7 @@
         - [ ] FireworkStarFade
         - [ ] Mapcloning
         - [ ] Mapextending
-        - [ ] Repairitem
+        - [x] Repairitem
         - [x] Shielddecoration
         - [ ] Tippedarrow
 - [ ] Loading recipes from json into Python object
