@@ -83,7 +83,7 @@ We use pytest for testing.
 - [ ] src/MCpypack/recipe/furnace.py
 - [ ] src/MCpypack/recipe/recipe.py
 - [ ] src/MCpypack/recipe/smithing.py
-- [ ] src/MCpypack/recipe/stonecutting.py
+- [x] src/MCpypack/recipe/stonecutting.py
 
 # Utils
 

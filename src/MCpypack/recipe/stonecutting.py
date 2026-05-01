@@ -10,7 +10,7 @@ class Stonecutting(Recipe):
     Stonecutting recipe.
     """
 
-    TYPE = "stonecutting"
+    TYPE = "minecraft:stonecutting"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.
