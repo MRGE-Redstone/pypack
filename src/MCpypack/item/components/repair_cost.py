@@ -7,9 +7,7 @@ class RepairCost(ItemComponent):
     Repair cost item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:repair_cost"
+    TYPE = "minecraft:repair_cost"
 
     @property
     def repair_cost(self) -> int:

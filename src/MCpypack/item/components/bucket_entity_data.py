@@ -8,9 +8,7 @@ class BucketEntityData(ItemComponent):
     NBT applied to an entity when placed from this bucket.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:bucket_entity_data"
+    TYPE = "minecraft:bucket_entity_data"
 
     def __init__(self,
                  *,

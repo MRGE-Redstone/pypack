@@ -8,9 +8,7 @@ class Consumable(ItemComponent):
     If present, the item can be consumed. Its options can also be modified.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:consumable"
+    TYPE = "minecraft:consumable"
 
     def __init__(self) -> None:
         super().__init__()

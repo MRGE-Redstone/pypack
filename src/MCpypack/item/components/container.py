@@ -10,9 +10,7 @@ class Container(ItemComponent):
     Container item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:container"
+    TYPE = "minecraft:container"
 
     @property
     def container(self) -> dict[int, dict]:

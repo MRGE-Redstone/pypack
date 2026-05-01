@@ -9,9 +9,7 @@ class SwingAnimation(ItemComponent):
     Allows modification of the swinging animation.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:swing_animation"
+    TYPE = "minecraft:swing_animation"
 
     @property
     def duration(self) -> int:

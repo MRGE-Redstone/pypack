@@ -10,9 +10,7 @@ class Enchantments(ItemComponent):
     Enchantments item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:enchantments"
+    TYPE = "minecraft:enchantments"
 
     def __init__(self, enchantments: dict[enchantment.Enchantment, int]) -> None:
         """

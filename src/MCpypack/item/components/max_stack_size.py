@@ -7,9 +7,7 @@ class MaxStackSize(ItemComponent):
     Max stack size item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:max_stack_size"
+    TYPE = "minecraft:max_stack_size"
 
     @property
     def max_stack_size(self) -> int:

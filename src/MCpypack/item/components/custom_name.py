@@ -9,9 +9,7 @@ class CustomName(ItemComponent):
     Used to specify an item, block, or entity's custom name. This component can be added, changed, or removed by any player with the item who has access to an anvil.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:custom_name"
+    TYPE = "minecraft:custom_name"
 
     @property
     def custom_name(self) -> PlainText:

@@ -11,9 +11,7 @@ class Rarity(ItemComponent):
     Sets the rarity of this item, which affects the default color of its name.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:rarity"
+    TYPE = "minecraft:rarity"
 
     def __init__(self, rarity: utils.Rarity) -> None:
         """

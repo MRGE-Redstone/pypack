@@ -8,9 +8,7 @@ class Weapon(ItemComponent):
     If present, the item acts as a weapon.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:weapon"
+    TYPE = "minecraft:weapon"
 
     @property
     def item_damage_per_attack(self) -> int:

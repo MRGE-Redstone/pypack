@@ -11,9 +11,7 @@ class Repairable(ItemComponent):
     Allows the item to be repaired, if damageable, in an anvil using the specified ingredient. Also repairs equipped items in the body slot of a tamed wolf.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:repairable"
+    TYPE = "minecraft:repairable"
 
     def __init__(self, items: ItemLike) -> None:
         """

@@ -9,9 +9,7 @@ class ChargedProjectiles(ItemComponent):
     Charhed projectiles item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:charged_projectiles"
+    TYPE = "minecraft:charged_projectiles"
 
     @property
     def charged_projectiles(self) -> list[ItemStack]:

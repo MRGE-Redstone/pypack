@@ -8,9 +8,7 @@ class Unbreakable(ItemComponent):
     If set, this item cannot lose durability, and blue "Unbreakable" text will appear in the item's tooltip.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:unbreakable"
+    TYPE = "minecraft:unbreakable"
 
     def __init__(self) -> None:
         super().__init__()

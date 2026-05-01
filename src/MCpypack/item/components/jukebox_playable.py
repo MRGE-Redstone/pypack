@@ -11,9 +11,7 @@ class JukeboxPlayable(ItemComponent):
     Jukebox playable item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:jukebox_playable"
+    TYPE = "minecraft:jukebox_playable"
 
     def __init__(self, jukebox_playable: JukeboxSong) -> None:
         """

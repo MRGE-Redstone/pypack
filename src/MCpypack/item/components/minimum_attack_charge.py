@@ -7,9 +7,7 @@ class MinimumAttackCharge(ItemComponent):
     Minimum attack charge item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:minimum_attack_charge"
+    TYPE = "minecraft:minimum_attack_charge"
 
     @property
     def minimum_attack_charge(self) -> float:

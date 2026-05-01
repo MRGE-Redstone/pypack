@@ -7,9 +7,7 @@ class UseEffects(ItemComponent):
     Use effects item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:use_effects"
+    TYPE = "minecraft:use_effects"
 
     @property
     def speed_multiplier(self) -> float:

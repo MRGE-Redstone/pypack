@@ -7,9 +7,7 @@ class MaxDamage(ItemComponent):
     Max damage item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:max_damage"
+    TYPE = "minecraft:max_damage"
 
     @property
     def max_damage(self) -> int:

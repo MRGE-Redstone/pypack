@@ -7,9 +7,7 @@ class Damage(ItemComponent):
     Damage item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:damage"
+    TYPE = "minecraft:damage"
 
     @property
     def damage(self) -> int:

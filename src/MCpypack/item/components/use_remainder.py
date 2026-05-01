@@ -1,6 +1,5 @@
 # This file contains the use_remainder component
 
-from pytest import raises
 from .components import ItemComponent
 
 from MCpypack.utils import ItemStack
@@ -11,9 +10,7 @@ class UseRemainder(ItemComponent):
     If present, replaces the item with a remainder item if its stack count has decreased after use.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:use_remainder"
+    TYPE = "minecraft:use_remainder"
 
     @property
     def use_remainder(self) -> ItemStack:

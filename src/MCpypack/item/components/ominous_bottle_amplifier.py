@@ -7,9 +7,7 @@ class OminousBottleAmplifier(ItemComponent):
     Ominous bottle amplifier item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:ominous_bottle_amplifier"
+    TYPE = "minecraft:ominous_bottle_amplifier"
 
     @property
     def ominous_bottle_amplifier(self) -> int:
