@@ -1,13 +1,13 @@
 # This file contains the ItemComponent class
 
-from abc import abstractmethod, ABC
+from abc import abstractmethod, ABC, ABCMeta
 
 class ItemComponents:
     """
     Item components.
     """
 
-    def __init__(self, *components: ItemComponent) -> None:
+    def __init__(self, *components: ItemComponent | RemoveItemComponent) -> None:
         """
         Init new components for an item.
 
@@ -20,20 +20,42 @@ class ItemComponents:
         self.config: dict = {}
 
         for component in components:
-            self.config[f"{component.TYPE}"] = component.to_value()
+            if isinstance(component, ItemComponent):
+                self.config[f"{component.TYPE}"] = component.to_value()
+            elif isinstance(component, str):
+                self.config[f"{component}"] = {}
+            else:
+                raise TypeError(f"component must be ItemComponent or RemoveItemComponent, got: {type(component)}")
 
-class ItemComponent(ABC):
+type RemoveItemComponent = str
+
+class ComponentMeta(ABCMeta):
+    """
+    ABCMeta class to allow class level __invert__.
+    """
+
+    def __invert__(cls) -> RemoveItemComponent:
+        """
+        Remove an ItemComponent.
+        """
+
+        return f"!{cls.TYPE}"
+
+class ItemComponent(ABC, metaclass=ComponentMeta):
     """
     Item component.
     """
 
-    @property
-    @abstractmethod
-    def TYPE(self) -> str:
-        """
-        Return the type of the item component.
-        """
-        pass
+    TYPE: str
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+
+        if "TYPE" not in cls.__dict__:
+            raise TypeError(f"{cls.__name__} must define TYPE")
+
+        if not isinstance(cls.TYPE, str):
+            raise TypeError(f"{cls.__name__}.TYPE must be a string")
 
     def __init__(self) -> None:
         """

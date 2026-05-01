@@ -9,9 +9,7 @@ class ItemName(ItemComponent):
     Unlike the minecraft:custom_name component, this name cannot be erased using an anvil, is not italicized, and does not appear in some labels, such as banner markers and item frames.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:item_name"
+    TYPE = "minecraft:item_name"
 
     @property
     def item_name(self) -> PlainText:

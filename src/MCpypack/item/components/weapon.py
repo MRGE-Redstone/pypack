@@ -8,9 +8,7 @@ class Weapon(ItemComponent):
     If present, the item acts as a weapon.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:weapon"
+    TYPE = "minecraft:weapon"
 
     @property
     def item_damage_per_attack(self) -> int:
@@ -18,6 +16,10 @@ class Weapon(ItemComponent):
 
     @item_damage_per_attack.setter
     def item_damage_per_attack(self, value: int) -> None:
+
+        if not isinstance(value, int):
+            raise TypeError(f"item_damage_per_attack must be of type int, got: {type(value)}")
+
         if not 0 <= value:
             raise ValueError(f"item_damage_per_attack must be a positive integer, got : item_damage_per_attack = {value}")
 
@@ -29,6 +31,10 @@ class Weapon(ItemComponent):
 
     @disable_blocking_for_seconds.setter
     def disable_blocking_for_seconds(self, value: float) -> None:
+
+        if not isinstance(value, float):
+            raise TypeError(f"disable_blocking_for_seconds must be of type float, got: {type(value)}")
+
         if not 0 <= value:
             raise ValueError(f"disable_blocking_for_seconds must be a positive float, got : disable_blocking_for_seconds = {value}")
 
@@ -36,7 +42,7 @@ class Weapon(ItemComponent):
 
     def __init__(self,
                  item_damage_per_attack: int = 1,
-                 disable_blocking_for_seconds: float = 0,
+                 disable_blocking_for_seconds: float = 0.0,
                  ) -> None:
         """
         Init weapon component.

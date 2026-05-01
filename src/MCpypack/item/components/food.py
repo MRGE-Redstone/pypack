@@ -8,9 +8,7 @@ class Food(ItemComponent):
     The food stats applied to the mob or player upon consuming this item.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:food"
+    TYPE = "minecraft:food"
 
     @property
     def nutrition(self) -> int:

@@ -8,9 +8,7 @@ class Enchantable(ItemComponent):
     If this and minecraft:enchantments are present on an item, and applicable enchantments are available, the item can be enchanted in an enchanting table.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:enchantable"
+    TYPE = "minecraft:enchantable"
 
     @property
     def value(self) -> int:

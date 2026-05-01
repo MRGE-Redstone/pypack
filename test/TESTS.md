@@ -36,17 +36,17 @@ We use pytest for testing.
 - [x] src/MCpypack/item/components/max_damage.py
 - [x] src/MCpypack/item/components/max_stack_size.py
 - [x] src/MCpypack/item/components/minimum_attack_charge.py
-- [ ] src/MCpypack/item/components/ominous_bottle_amplifier.py
+- [x] src/MCpypack/item/components/ominous_bottle_amplifier.py
 - [ ] src/MCpypack/item/components/provides_trim_material.py
-- [ ] src/MCpypack/item/components/rarity.py
+- [x] src/MCpypack/item/components/rarity.py
 - [ ] src/MCpypack/item/components/repair_cost.py
 - [ ] src/MCpypack/item/components/repairable.py
 - [ ] src/MCpypack/item/components/stored_enchantments.py
 - [x] src/MCpypack/item/components/swing_animation.py
 - [x] src/MCpypack/item/components/unbreakable.py
-- [ ] src/MCpypack/item/components/use_effects.py
+- [x] src/MCpypack/item/components/use_effects.py
 - [x] src/MCpypack/item/components/use_remainder.py
-- [ ] src/MCpypack/item/components/weapon.py
+- [x] src/MCpypack/item/components/weapon.py
 
 <!--
 ### Creation scripts

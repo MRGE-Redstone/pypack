@@ -12,9 +12,7 @@ class StoredEnchantments(ItemComponent):
     See Enchantments component for this.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:stored_enchantments"
+    TYPE = "minecraft:stored_enchantments"
 
     def __init__(self, stored_enchantments: dict[enchantment.Enchantment, int]) -> None:
         """

@@ -19,18 +19,27 @@ def test_add_multiple_components():
     }
 
 def test_requires_TYPE():
-    class NoType(ItemComponent):
-        def to_value(self) -> str:
-            return "to_value"
-
     with pytest.raises(TypeError):
-        t = NoType()
+
+        class NoType(ItemComponent):
+            def to_value(self) -> str:
+                return "to_value"
+
+def test_TYPE_correct_type():
+    with pytest.raises(TypeError):
+
+        class NoType(ItemComponent):
+            TYPE = 5
 
 def test_requires_to_value():
     class NoToValue(ItemComponent):
-        @property
-        def TYPE(self) -> str:
-            return "type"
+        TYPE = "type"
 
     with pytest.raises(TypeError):
         t = NoToValue()
+
+def test_remove_component():
+    class TestComponent(ItemComponent):
+        TYPE = "test_component"
+
+    assert ~TestComponent == "!test_component"

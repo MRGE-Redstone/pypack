@@ -11,9 +11,7 @@ class DamageType(ItemComponent):
     Damage type item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:damage_type"
+    TYPE = "minecraft:damage_type"
 
     def __init__(self, damage_type: DamageTypeEnum) -> None:
         """

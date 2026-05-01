@@ -12,9 +12,7 @@ class ProvidesTrimMaterial(ItemComponent):
     When present, this item provides the specified trim material when used in a trimming recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:provides_trim_material"
+    TYPE = "minecraft:provides_trim_material"
 
     def __init__(self, trim_material: TrimMaterial) -> None:
         """

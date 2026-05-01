@@ -11,9 +11,7 @@ class BundleContents(ItemComponent):
     Bundle contents item component.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:bundle_contents"
+    TYPE = "minecraft:bundle_contents"
 
     def __init__(self, bundle_contents: list[ItemStack]) -> None:
         """

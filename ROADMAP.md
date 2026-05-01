@@ -82,7 +82,7 @@
     - [x] Weapon
     - [ ] WritableBookContent
     - [ ] WrittenBookContent
-- [ ] Support removing components
+- [x] Support removing components
 
 ## Recipes
 

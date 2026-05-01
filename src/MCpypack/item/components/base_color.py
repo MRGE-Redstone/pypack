@@ -11,9 +11,7 @@ class BaseColor(ItemComponent):
     The base dye color of the banner applied on a shield.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:base_color"
+    TYPE = "minecraft:base_color"
 
     def __init__(self, color: Color) -> None:
         """

@@ -8,9 +8,7 @@ class AttackRange(ItemComponent):
     Determines the attack range and hitbox margin of a weapon.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:attack_range"
+    TYPE = "minecraft:attack_range"
 
     @property
     def min_reach(self) -> float:

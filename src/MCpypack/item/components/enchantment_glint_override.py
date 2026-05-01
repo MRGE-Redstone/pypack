@@ -8,9 +8,7 @@ class EnchantmentGlintOverride(ItemComponent):
     Overrides the enchantment glint effect on this item.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:enchantment_glint_override"
+    TYPE = "minecraft:enchantment_glint_override"
 
     def __init__(self, enchantment_glint_override: bool) -> None:
         """

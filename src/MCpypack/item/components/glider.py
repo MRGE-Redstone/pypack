@@ -8,9 +8,7 @@ class Glider(ItemComponent):
     If present, this item allows players to glide (as with elytra) when equipped.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:glider"
+    TYPE = "minecraft:glider"
 
     def __init__(self) -> None:
         super().__init__()

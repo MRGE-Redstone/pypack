@@ -11,9 +11,7 @@ class Dye(ItemComponent):
     When present on an item, stores the color of dye that this item can be used as for the purpose of crafting recipes and mob or block interactions.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:dye"
+    TYPE = "minecraft:dye"
 
     def __init__(self, dye: Color) -> None:
         """
