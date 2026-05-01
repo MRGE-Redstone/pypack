@@ -11,9 +11,7 @@ class CraftingDecoratedPot(Recipe):
     Decorated pot crafting recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:crafting_decorated_pot"
+    TYPE = "minecraft:crafting_decorated_pot"
 
     def check_version(self, version: Version) -> bool:
 

@@ -15,9 +15,7 @@ class SmithingTransform(Recipe):
     Smithing transform recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:smithing_transform"
+    TYPE = "minecraft:smithing_transform"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.
@@ -78,9 +76,7 @@ class SmithingTrim(Recipe):
     Smithing trim recipe for the smithing table.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:smithing_trim"
+    TYPE = "minecraft:smithing_trim"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.

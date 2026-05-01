@@ -12,20 +12,17 @@ from MCpypack.item import ItemLike
 from .recipe import Recipe
 from MCpypack.utils import Time, Group, CategoryLike, Category, Experience, ItemStack
 
-from abc import ABC, abstractmethod
+from abc import ABC
 
 class Furnace(Recipe, ABC):
     """
     Base class for furnace recipes.
     """
 
-    @property
-    @abstractmethod
-    def TYPE(self) -> str:
-        """
-        Return the type of the furnace recipe.
-        """
-        pass
+    # !ToDO
+    # Add another class attribute that does not require
+    # declaring for the ABC Furnace class.
+    TYPE = ""
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.
@@ -95,24 +92,18 @@ class Smelting(Furnace):
     Smelting recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:smelting"
+    TYPE = "minecraft:smelting"
 
 class Blasting(Furnace):
     """
     Blasting recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:blasting"
+    TYPE = "minecraft:blasting"
 
 class Smoking(Furnace):
     """
     Smoking recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:smoking"
+    TYPE = "minecraft:smoking"

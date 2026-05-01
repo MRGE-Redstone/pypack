@@ -13,9 +13,7 @@ class CraftingShapeless(Recipe):
     Shapeless crafting recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:crafting_shapeless"
+    TYPE = "minecraft:crafting_shapeless"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.

@@ -1,4 +1,4 @@
-# This file contains the CraftingSpecialShieldDecoration class
+# This file contains the CraftingSpecialBannerDuplicate class
 
 from packaging.version import Version
 
@@ -6,12 +6,12 @@ from MCpypack.item import ItemLike
 from MCpypack.utils import ItemStack
 from MCpypack.recipe.recipe import Recipe
 
-class CraftingSpecialShieldDecoration(Recipe):
+class CraftingSpecialBannerDuplicate(Recipe):
     """
-    Special shield decoration crafting recipe.
+    Special banner duplicate crafting recipe.
     """
 
-    TYPE = "minecraft:crafting_special_shielddecoration"
+    TYPE = "minecraft:crafting_special_bannerduplicate"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.
@@ -22,27 +22,20 @@ class CraftingSpecialShieldDecoration(Recipe):
 
     def __init__(self,
                  name: str,
-                 target: ItemLike,
                  banner: ItemLike,
                  result: ItemStack,
                  ) -> None:
         """
-        Init special shield decoration crafting recipe.
+        Init special banner duplicate crafting recipe.
 
         Parameters
         ----------
         name:
             Name of the recipe.
-        target:
-            Base item.
-            A shield would make sense, but can be anything.
         banner:
-            Base item.
-            If it is a banner the recipe will work and the nbt-data will be
-            copied.
+            Base banner with color and pattern.
         result:
             Result of the crafting.
-            Should be a shield, but can be anything.
         """
 
         super().__init__(name)
@@ -57,8 +50,6 @@ class CraftingSpecialShieldDecoration(Recipe):
             else:
                 return ingredient.value
 
-        self.config["target"] = ingredient_to_config(target)
         self.config["banner"] = ingredient_to_config(banner)
 
         self.config["result"] = result.to_dict()
-

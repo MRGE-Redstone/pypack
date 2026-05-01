@@ -14,13 +14,16 @@ class Recipe(ABC):
     Recipe class for adding recipes.
     """
 
-    @property
-    @abstractmethod
-    def TYPE(self) -> str:
-        """
-        Return the type of the recipe.
-        """
-        pass
+    TYPE: str
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+
+        if "TYPE" not in cls.__dict__:
+            raise TypeError(f"{cls.__name__} must define TYPE")
+
+        if not isinstance(cls.TYPE, str):
+            raise TypeError(f"{cls.__name__}.TYPE must be a string")
 
     @abstractmethod
     def check_version(self, version: Version) -> bool:

@@ -57,9 +57,7 @@ def test_add_recipes():
     ns = Namespace("ns")
 
     class FakeRecipe(Recipe):
-        @property
-        def TYPE(self) -> str:
-            return "fake_recipe"
+        TYPE = "fake_recipe"
         
         def check_version(self, version: Version) -> bool:
             return True

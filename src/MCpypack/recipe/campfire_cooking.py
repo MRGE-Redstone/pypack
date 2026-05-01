@@ -11,9 +11,7 @@ class CampfireCooking(Recipe):
     Campfire cooking recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:campfire_cooking"
+    TYPE = "minecraft:campfire_cooking"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.

@@ -100,14 +100,14 @@
     - [x] Stonecutting
     - [ ] CraftingSpecial
         - [ ] Armordye
-        - [ ] Bannerduplicate
+        - [x] Bannerduplicate
         - [ ] Bookcloning
         - [ ] FireworkRocket
         - [ ] FireworkStar
         - [ ] FireworkStarFade
         - [ ] Mapcloning
         - [ ] Mapextending
-        - [ ] Repairitem
+        - [x] Repairitem
         - [x] Shielddecoration
         - [ ] Tippedarrow
 - [ ] Loading recipes from json into Python object

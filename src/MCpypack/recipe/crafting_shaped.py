@@ -9,9 +9,7 @@ class CraftingShaped(Recipe):
     Shaped crafting recipe.
     """
 
-    @property
-    def TYPE(self) -> str:
-        return "minecraft:crafting_shaped"
+    TYPE = "minecraft:crafting_shaped"
 
     def check_version(self, version: Version) -> bool:
         # This just returns True.

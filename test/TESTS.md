@@ -72,16 +72,18 @@ We use pytest for testing.
 
 # Recipe
 
-- [ ] src/MCpypack/recipe/campfire_cooking.py
-- [ ] src/MCpypack/recipe/crafting_decorated_pot.py
+- [x] src/MCpypack/recipe/campfire_cooking.py
+- [x] src/MCpypack/recipe/crafting_decorated_pot.py
 - [ ] src/MCpypack/recipe/crafting_shaped.py
 - [ ] src/MCpypack/recipe/crafting_shapeless.py
-- [ ] src/MCpypack/recipe/crafting_special/crafting_special_shielddecoration.py
-- [ ] src/MCpypack/recipe/crafting_transmute.py
+- [x] src/MCpypack/recipe/crafting_special/crafting_special_bannerduplicate.py
+- [x] src/MCpypack/recipe/crafting_special/crafting_special_repairitem.py
+- [x] src/MCpypack/recipe/crafting_special/crafting_special_shielddecoration.py
+- [x] src/MCpypack/recipe/crafting_transmute.py
 - [ ] src/MCpypack/recipe/furnace.py
 - [ ] src/MCpypack/recipe/recipe.py
 - [ ] src/MCpypack/recipe/smithing.py
-- [ ] src/MCpypack/recipe/stonecutting.py
+- [x] src/MCpypack/recipe/stonecutting.py
 
 # Utils
 

@@ -8,7 +8,11 @@ from .campfire_cooking import CampfireCooking
 from .furnace import Smelting, Blasting, Smoking
 from .stonecutting import Stonecutting
 from .smithing import SmithingTransform, SmithingTrim
-from .crafting_special import CraftingSpecialShieldDecoration
+from .crafting_special import (
+    CraftingSpecialShieldDecoration,
+    CraftingSpecialBannerDuplicate,
+    CraftingSpecialRepairItem,
+)
 
 __all__: list[str] = [
     "CraftingShaped",
@@ -23,4 +27,6 @@ __all__: list[str] = [
     "SmithingTransform",
     "SmithingTrim",
     "CraftingSpecialShieldDecoration",
+    "CraftingSpecialBannerDuplicate",
+    "CraftingSpecialRepairItem",
 ]

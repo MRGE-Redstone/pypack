@@ -55,7 +55,7 @@ ns1.add_recipes(
                 ),
                 components.Weapon(
                     item_damage_per_attack=0,
-                    disable_blocking_for_seconds=5
+                    disable_blocking_for_seconds=5.0
                 ),
                 components.Unbreakable(),
                 components.Enchantments(
