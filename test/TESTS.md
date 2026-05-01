@@ -36,7 +36,7 @@ We use pytest for testing.
 - [x] src/MCpypack/item/components/max_damage.py
 - [x] src/MCpypack/item/components/max_stack_size.py
 - [x] src/MCpypack/item/components/minimum_attack_charge.py
-- [ ] src/MCpypack/item/components/ominous_bottle_amplifier.py
+- [x] src/MCpypack/item/components/ominous_bottle_amplifier.py
 - [ ] src/MCpypack/item/components/provides_trim_material.py
 - [x] src/MCpypack/item/components/rarity.py
 - [ ] src/MCpypack/item/components/repair_cost.py

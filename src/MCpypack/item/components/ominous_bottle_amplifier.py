@@ -15,6 +15,10 @@ class OminousBottleAmplifier(ItemComponent):
 
     @ominous_bottle_amplifier.setter
     def ominous_bottle_amplifier(self, value: int) -> None:
+        if not isinstance(value, int):
+            raise TypeError(f"ominous_bottle_amplifier must be of type int, got: \
+                {type(value)}")
+
         if not 0 <= value <= 4:
             raise ValueError(f"ominous_bottle_amplifier must be an integer between 0 and 4, got: ominous_bottle_amplifier = {value}")
 
