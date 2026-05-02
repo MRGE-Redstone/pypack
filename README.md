@@ -22,7 +22,7 @@ pip intall MCpypack
 
 ## Example
 ```python
-from MCpypack.core import Datapack, Namespace
+from MCpypack.core import Datapack
 from MCpypack.recipe import CraftingShapeless
 from MCpypack.utils import ItemStack, Rarity, SwingAnimation, PlainText, TextColor, Formatting
 from MCpypack import components
@@ -32,56 +32,48 @@ from MCpypack.item.final import Item, Enchantment, DamageType
 pack = Datapack(name="mcpypack", description='mcpypack yay', version='26.1')
 
 # Create a new namespace
-ns1 = Namespace('recipes')
+ns1 = pack.namespace('recipes')
+
+# Create an ItemStack
+python_sword = ItemStack \
+    .item(Item.COPPER_SWORD) \
+    .count(1) \
+    .component(components.EnchantmentGlintOverride(True)) \
+    .component(components.AttackRange(
+        max_reach=25,
+    )) \
+    .component(components.DamageType(DamageType.LIGHTNING_BOLT)) \
+    .component(components.Rarity(Rarity.EPIC)) \
+    .component(components.Weapon(
+            item_damage_per_attack=0,
+            disable_blocking_for_seconds=5.0
+    )) \
+    .component(components.Enchantments(
+        {
+            Enchantment.KNOCKBACK: 50,
+            Enchantment.SHARPNESS: 5,
+        }
+    )) \
+    .component(components.SwingAnimation(
+            animation_type=SwingAnimation.STAB,
+            duration=10,
+    )) \
+    .component(components.ItemName(PlainText(
+        text="MCpypack Sword",
+        formatting=Formatting(
+            color=TextColor.AQUA,
+            bold=True,
+        )
+    )))
 
 # Add recipes to the namespace
 ns1.add_recipes(
     CraftingShapeless(
         name="python",
         ingredients=[Item.DIAMOND_SWORD, Item.COPPER_INGOT],
-        result=ItemStack(
-            item_id=Item.COPPER_SWORD,
-            count=1,
-            components=components.ItemComponents(
-                components.EnchantmentGlintOverride(True),
-                components.AttackRange(
-                    max_reach=25
-                ),
-                components.DamageType(
-                    DamageType.LIGHTNING_BOLT
-                ),
-                components.Rarity(
-                    Rarity.EPIC
-                ),
-                components.Weapon(
-                    item_damage_per_attack=0,
-                    disable_blocking_for_seconds=5.0
-                ),
-                components.Unbreakable(),
-                components.Enchantments(
-                    {
-                        Enchantment.KNOCKBACK: 50,
-                        Enchantment.SHARPNESS: 5,
-                    }
-                ),
-                components.SwingAnimation(
-                    animation_type=SwingAnimation.STAB,
-                    duration=10,
-                ),
-                components.ItemName(PlainText(
-                    text="MCpypack Sword",
-                    formatting=Formatting(
-                        color=TextColor.AQUA,
-                        bold=True,
-                    )
-                ))
-            )
-        )
-    ),
+        result=python_sword
+    )
 )
-
-# Add the namespace to the datapack
-pack.add_namespaces(ns1)
 
 # Export the datapack
 pack.export()

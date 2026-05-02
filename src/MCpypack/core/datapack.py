@@ -107,6 +107,34 @@ class Datapack:
             existing_namespaces.append(namespace.name)
             self.namespaces.append(namespace)
 
+    def namespace(self, name: str) -> Namespace:
+        """
+        Create a new namespace from a str and instantly add it to the pack.
+
+        Parameters
+        ----------
+        name:
+            The name of the namespace.
+
+        Returns
+        -------
+        Namespace:
+            The newly created or existing namespace.
+        """
+
+        if not isinstance(name, str):
+            raise TypeError(f"name of namespace must be of type str, got: {type(name)}")
+
+        # If already exists return existing namespace.
+        for ns in self.namespaces:
+            if ns.name == name:
+                return ns
+
+        # Otherwise, create a new one.
+        ns = Namespace(name)
+        self.add_namespaces(ns)
+        return ns
+
     def export(self, overwrite: bool = True, zip: bool = False) -> None:
         """
         Export the datapack to location specified in 'relative_export_dir'.

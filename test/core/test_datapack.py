@@ -82,6 +82,30 @@ def test_duplicate_namespaces():
     with pytest.raises(ValueError):
         pack.add_namespaces(Namespace("ns1"), Namespace("ns1"))
 
+def test_namespace_instant():
+    pack = Datapack("n", "d", "1.20.1")
+
+    ns = pack.namespace("test")
+
+    assert ns.name == Namespace("test").name
+
+def test_namespace_instant_invalid_type():
+    pack = Datapack("n", "d", "1.20.1")
+
+    with pytest.raises(TypeError):
+        pack.namespace(1)
+
+def test_namespace_instant_existing():
+    pack = Datapack("n", "d", "1.20.1")
+
+    pack.add_namespaces(
+        ns1 := Namespace("exists")
+    )
+
+    ns2 = pack.namespace("exists")
+
+    assert ns1 == ns2
+
 def test_export_creates_structure(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     monkeypatch.chdir(tmp_path)
 
