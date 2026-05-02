@@ -31,7 +31,7 @@ from MCpypack.item.final import Item, Enchantment, DamageType
 pack = Datapack(name="mcpypack", description='mcpypack yay', version='26.1')
 
 # Create a new namespace
-ns1 = Namespace('recipes')
+ns1 = pack.namespace('recipes')
 
 # Add recipes to the namespace
 ns1.add_recipes(
@@ -78,9 +78,6 @@ ns1.add_recipes(
         )
     ),
 )
-
-# Add the namespace to the datapack
-pack.add_namespaces(ns1)
 
 # Export the datapack
 pack.export()
