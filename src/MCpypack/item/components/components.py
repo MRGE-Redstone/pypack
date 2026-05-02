@@ -28,6 +28,20 @@ class ItemComponents:
                 raise TypeError(f"component must be ItemComponent or RemoveItemComponent, got: {type(component)}")
 
     def __iadd__(self, component: ItemComponent | RemoveItemComponent) -> ItemComponents:
+        """
+        In-place addition for ItemComponents.
+        Add ItemComponent or RemoveItemComponent to config of ItemComponents
+        instance.
+
+        Parameters
+        ----------
+        component:
+            ItemComponent or RemoveItemComponent which should be added.
+
+        Returns
+        -------
+            Modified instance of ItemComponents.
+        """
 
         if isinstance(component, ItemComponent):
             self.config[f"{component.TYPE}"] = component.to_value()
