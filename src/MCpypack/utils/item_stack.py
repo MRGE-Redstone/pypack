@@ -3,8 +3,6 @@
 # But itemstacks are also used in other places than results of recipes.
 # Also Minecraft lately supports counts for almost all recipes.
 
-from dataclasses import dataclass
-
 from MCpypack.item import item, components
 
 # Earlier CountedResult
@@ -25,11 +23,11 @@ class ItemStack:
         self._item_id = new_item_id
 
     @property
-    def count(self) -> int:
+    def item_count(self) -> int:
         return self._count
 
-    @count.setter
-    def count(self, value: int) -> None:
+    @item_count.setter
+    def item_count(self, value: int) -> None:
         if not isinstance(value, int):
             raise TypeError(f"count must be an integer, got: {type(value)}")
 
@@ -68,8 +66,71 @@ class ItemStack:
         """
 
         self.item_id = item_id
-        self.count = count
+        self.item_count = count
         self.components = components
+
+    @classmethod
+    def item(cls, item_id: item.Item) -> ItemStack:
+        """
+        Initiate a new instance with just an item.
+        Used for method chaining.
+
+        Parameters
+        ----------
+        item_id:
+            Id of the Item.
+
+        Returns
+        -------
+        ItemStack:
+            The instance of ItemStack.
+        """
+
+        return cls(item_id=item_id)
+
+    def count(self, count: int) -> ItemStack:
+        """
+        Chain method to modify the count of the item.
+
+        Parameters
+        ----------
+        count:
+            Count of the item.
+
+        Returns
+        -------
+        ItemStack:
+            The instance of the ItemStack with modified count.
+        """
+
+        self.item_count = count
+
+        return self
+
+    def component(self, component: components.components.ItemComponent | components.components.RemoveItemComponent) -> ItemStack:
+        """
+        Chain method for adding or removing components.
+
+        Parameters
+        ----------
+        component:
+            Component which should be added or removed.
+
+        Returns
+        -------
+        ItemStack:
+            The instance of the ItemStack with modified components.
+        """
+
+        if not isinstance(component, (components.components.ItemComponent, str)):
+            raise TypeError(f"component must be of type ItemComponent | RemoveItemComponent, got: {type(component)}")
+
+        if isinstance(self.components, components.ItemComponents):
+            self.components += component
+        elif isinstance(self.components, type(None)):
+            self.components = components.ItemComponents(component)
+
+        return self
 
     def to_dict(self) -> dict:
         """
@@ -80,8 +141,8 @@ class ItemStack:
 
         result["id"] = self.item_id.value
 
-        if self.count != 1:
-            result["count"] = self.count
+        if self.item_count != 1:
+            result["count"] = self.item_count
 
         if self.components:
             result["components"] = self.components.config

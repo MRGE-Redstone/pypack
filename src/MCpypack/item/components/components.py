@@ -27,6 +27,17 @@ class ItemComponents:
             else:
                 raise TypeError(f"component must be ItemComponent or RemoveItemComponent, got: {type(component)}")
 
+    def __iadd__(self, component: ItemComponent | RemoveItemComponent) -> ItemComponents:
+
+        if isinstance(component, ItemComponent):
+            self.config[f"{component.TYPE}"] = component.to_value()
+        elif isinstance(component, str):
+            self.config[f"{component}"] = {}
+        else:
+            raise TypeError(f"component must be ItemComponent or RemoveItemComponent, got: {type(component)}")
+
+        return self
+
 type RemoveItemComponent = str
 
 class ComponentMeta(ABCMeta):
